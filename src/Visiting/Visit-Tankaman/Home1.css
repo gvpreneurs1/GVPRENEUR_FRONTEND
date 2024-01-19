@@ -1,0 +1,192 @@
+/* Home css below */
+.Home1 {
+    width: 400px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+/* View counter Below */
+
+.view_counter {
+    width: fit-content;
+    max-width: 200px;
+    text-align: center;
+    font-size: 11px;
+    padding: 6px 12px;
+    background: #00000078;
+    color: white;
+    margin: 0 auto;
+    top: 5px;
+    z-index: 5;
+    border: 2px solid white;
+    border-radius: 37px;
+    display: flex;
+
+}
+
+.Profile {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Profile img {
+    height: 100px;
+    max-width: 300px;
+    border-radius: 12px;
+    border: 3px solid white;
+    padding: 3px;
+    background: white;
+    height: 160px;
+    width: 160px;
+}
+
+.home1Text {
+    margin: 15px 0px;
+}
+
+
+.home1Text h2 {
+    font-weight: 400;
+    margin: 0px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #302b2b;
+    border-bottom: 3px solid #000000;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.home1Text p {
+    margin: 6px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: #302b2b;
+    text-align: center;
+}
+
+
+/* Contact button below */
+
+.contact_button li {
+    background: #302b2b;
+    color: white;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 8px 8px;
+    width: fit-content;
+    font-size: 10px;
+    margin: 10px 0px;
+    display: inline-block;
+    box-shadow: 1px 1px 10px 0px #00000040;
+    margin-right: 10px;
+
+}
+
+/* Below is the css properties for card contents */
+
+.Card-Contact {
+    display: block;
+    margin-top: 20px;
+
+}
+
+.Card-Group {
+    margin-top: 20px;
+    margin-left: 30px
+}
+
+
+/* Below is the whatsapp section */
+
+
+.Whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.Whatsapp input,
+.Whatsapp button {
+    height: 30px;
+    /* Set a specific height for both input and button */
+    margin: 5px;
+    /* Add spacing between the input and button */
+}
+
+.Whatsapp button {
+    background: #1aab2c;
+    font-size: 12px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.Whatsapp a {
+    color: white;
+}
+
+/* Contacts-Share */
+.Contacts-Share {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.Contacts-Share button {
+    background: #ffab00;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    margin: 3px 0px;
+    width: 139px;
+    font-weight: 500;
+    color: black;
+    box-shadow: 0px 0px 10px 0px #0000002e;
+}
+
+/* Social meida */
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-link {
+    margin-right: 10px;
+    /* Optional: Add some space between icons */
+
+}
+
+/* Customize the styles for each social media icon */
+.social-link:nth-child(1) {
+    color: #1877f2;
+    /* Facebook blue */
+    font-size: 24px;
+}
+
+.social-link:nth-child(2) {
+    color: #1da1f2;
+    /* Twitter blue */
+    font-size: 24px;
+}
+
+.social-link:nth-child(3) {
+    color: #ff0000;
+    /* YouTube red */
+    font-size: 24px;
+}
+
+.social-link:nth-child(4) {
+    color: #e4405f;
+    /* Instagram pink */
+    font-size: 24px;
+}

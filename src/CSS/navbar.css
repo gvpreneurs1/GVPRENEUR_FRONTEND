@@ -1,0 +1,107 @@
+.point img {
+    height: 624px;
+    width: 624px;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+
+/* Style the container that holds the image */
+#hero-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 50px 30px 125px 30px;
+    max-width: 100%;
+    /* Add padding to prevent content from sticking to the edges */
+    box-sizing: border-box;
+    /* Adjust the size as needed to match your image */
+    background-color: #14053E;
+}
+
+#hero-section::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 117px);
+    left: -999px;
+    right: -999px;
+    height: 250px;
+    background: #fff;
+    transform: rotate(-7deg);
+
+
+}
+
+/* Style the image within the container */
+
+.Bottom img {
+    margin-top: 400px;
+    width: fit-content;
+    height: 200px;
+
+    position: absolute;
+
+}
+
+.text-section {
+    display: inline;
+    margin-top: 15px;
+}
+
+.text-section h1 {
+    font-size: 56px;
+}
+
+
+/* Style the overlay text (paragraph) */
+.text-overlay {
+    height: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+
+
+/* Style the overlay heading */
+.overlay-heading {
+    font-size: 56px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    margin: 0;
+    /* Remove default margin to control spacing */
+}
+
+/* Style the overlay paragraph */
+.overlay-paragraph {
+    font-size: 20px;
+    /* Adjust the font size as needed */
+    margin: 10px 0;
+    /* Adjust the margins as needed */
+    /* Other text styles (color, etc.) can be added as needed */
+    color: #ffffff;
+}
+
+.Gvprenuer {
+    color: #28b730;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.hover1 button {
+    background-color: #ffc107;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media (max-width: 991px) {
+    .hero-section::after {
+        content: '';
+    }
+}

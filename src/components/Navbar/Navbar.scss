@@ -1,0 +1,26 @@
+.navbar {
+    @media (min-width: 768px) {
+        background-color: #14053E;
+        font-weight: 700;
+        color: #ffffff;
+        padding: 16px 0;
+        display: flex;
+        line-height: 1;
+        position: relative;
+        z-index: 1;
+        justify-content: end;
+    }
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+
+    li {
+        padding: 0 15px;
+    }
+}
+
+.btn {
+    background-color: #ff1b6b;
+}

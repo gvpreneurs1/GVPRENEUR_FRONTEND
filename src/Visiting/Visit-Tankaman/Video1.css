@@ -1,0 +1,28 @@
+.video-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.video-container iframe {
+    max-width: 100%;
+    min-height: 256px;
+    border-radius: 5px;
+    position: relative;
+    margin: 8px auto;
+}
+
+.video-container h1 {
+    text-align: left;
+    font-size: 20px;
+    background: #ffab00;
+    font-weight: 500;
+    letter-spacing: 0px;
+    width: -webkit-fill-available;
+    border-bottom: 3px solid;
+    padding: 10px;
+    margin: 0px 0px;
+    color: black;
+}
