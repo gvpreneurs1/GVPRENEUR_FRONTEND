@@ -10,6 +10,7 @@ import Video1 from './Visiting/Visit-Tankaman/Video1';
 import About1 from './Visiting/Visit-Tankaman/About1';
 import Login from './views/Login';
 import Register from './views/Register';
+import AdminLoginComponent from './views/AdminLogin';
 
 function Home() {
   return (
@@ -35,7 +36,7 @@ function Tankaman() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Register />} />
+      <Route path="/" element={<AdminLoginComponent />} />
     </Routes>
   );
 }
