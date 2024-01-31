@@ -8,9 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home1 from './Visiting/Visit-Tankaman/Home1';
 import Video1 from './Visiting/Visit-Tankaman/Video1';
 import About1 from './Visiting/Visit-Tankaman/About1';
-import Login from './views/Login';
-import Register from './views/Register';
-import AdminLoginComponent from './views/AdminLogin';
+import Login from './views/User/Login';
+import Register from './views/User/Register';
+import AdminLoginComponent from './views/Admin/AdminLogin';
+import Landing from './views/User/Landing';
+import CreateCourseForm from './views/Admin/CreateCourseForm'
 
 function Home() {
   return (
@@ -37,6 +39,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AdminLoginComponent />} />
+      <Route path= "/create-course" element= {<CreateCourseForm />}/>
     </Routes>
   );
 }

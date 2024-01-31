@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './AdminLogin.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const AdminLoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [adminId, setadminId] = useState('');
+  const [accessToken, setAccessToken] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault();
     try {
       const response = await axios.post('http://localhost:3005/api/login', {
         email,
         password,
-        role: 'admin', // Set the role to 'admin'
+        role: 'admin',
       });
+      localStorage.setItem('accessToken', response.data.accessToken);
+      localStorage.setItem('adminId', response.data.adminId);
+    
 
-      // Handle successful login response
+      setAccessToken(response.data.accessToken);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.accessToken}`;
+      navigate(`/create-course`);
+      /// Handle successful login response
       console.log(response.data);
     } catch (error) {
-      // Handle login error
+      /// Handle login error
       console.error(error.response.data.message);
     }
   };
 
   return (
-    <div className="container">
+    <div className="admin-container">
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 login-card">
           <h2>Admin Login</h2>
           <form>
             <div className="mb-3">

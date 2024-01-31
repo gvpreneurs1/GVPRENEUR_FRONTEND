@@ -1,0 +1,50 @@
+body {
+  background-color: #f8f9fa; /* Use a light background color */
+}
+
+.navbar {
+  background-color: #343a40; /* Dark color for the navbar */
+}
+
+.login-form {
+  background-color: #ffffff; /* White background color for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Media query to adjust width for screens less than 425px */
+@media (max-width: 425px) {
+  .login-form {
+    width: 310px;
+  }
+}
+
+.login-form label {
+  color: #343a40; /* Dark color for form labels */
+}
+
+.login-form input {
+  border: 1px solid #ced4da; /* Border color for form inputs */
+}
+
+.login-form button {
+  background-color: #007bff; /* Primary color for form button */
+  border: 1px solid #007bff; /* Border color for form button */
+}
+
+.login-form button:hover {
+  background-color: #0056b3; /* Darker color on hover for form button */
+}
+
+
+.navbar {
+  background-color: #343a40; /* Dark color for the navbar */
+}
+
+.logo-placeholder img{
+  max-height: 100px;
+}

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
-
+import './Register.css'
 Modal.setAppElement('#root');
 
 function Register() {
@@ -127,52 +127,48 @@ function Register() {
   };
 
   return (
-    <section id="Register">
-      <h1>Registration Form</h1>
-      <form onSubmit={handleSubmitForm}>
-        <label>
-          Username:
-          <input type="text" name="username" value={formData.username} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" name="password" value={formData.password} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Address:
-          <input type="text" name="address" value={formData.address} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Mobile:
-          <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} />
-        </label>
-        <br />
-        <button type="submit">Register</button>
-      </form>
-      <ToastContainer />
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        contentLabel="Registration Modal"
-      >
-        <h2>Verify OTP</h2>
-        <label>
-          OTP:
-          <input type="text" name="otp" value={otpData.otp} onChange={handleOtpChange} />
-        </label>
-        <br />
-        <button type="button" onClick={handleSubmitOtp}>
-          Verify OTP
-        </button>
-      </Modal>
+<section id="Register" className="registration-section">
+      <div className="container">
+        <h1>Registration Form</h1>
+        <form onSubmit={handleSubmitForm}  className='Registration-Form'>
+          <div className="mb-3">
+            <label htmlFor="username">Username:</label>
+            <input type="text" className="form-control" name="username" value={formData.username} onChange={handleChange} />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email">Email:</label>
+            <input type="email" className="form-control" name="email" value={formData.email} onChange={handleChange} />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password">Password:</label>
+            <input type="password" className="form-control" name="password" value={formData.password} onChange={handleChange} />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="address">Address:</label>
+            <input type="text" className="form-control" name="address" value={formData.address} onChange={handleChange} />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="mobile">Mobile:</label>
+            <input type="text" className="form-control" name="mobile" value={formData.mobile} onChange={handleChange} />
+          </div>
+          <button type="submit" className="btn btn-primary">Register</button>
+        </form>
+        <ToastContainer />
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          contentLabel="Registration Modal"
+        >
+          <h2>Verify OTP</h2>
+          <div className="mb-3">
+            <label htmlFor="otp">OTP:</label>
+            <input type="text" className="form-control" name="otp" value={otpData.otp} onChange={handleOtpChange} />
+          </div>
+          <button type="button" className="btn btn-primary" onClick={handleSubmitOtp}>
+            Verify OTP
+          </button>
+        </Modal>
+        </div>
     </section>
   );
 }
