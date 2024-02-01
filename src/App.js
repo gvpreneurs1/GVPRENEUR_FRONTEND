@@ -12,7 +12,9 @@ import Login from './views/User/Login';
 import Register from './views/User/Register';
 import AdminLoginComponent from './views/Admin/AdminLogin';
 import Landing from './views/User/Landing';
-import CreateCourseForm from './views/Admin/CreateCourseForm'
+import CreateCourseForm from './views/Admin/CreateCourseForm';
+import GetCourse from './views/Admin/GetCourse';
+import CourseDetails from './views/Admin/CourseDetails'
 
 function Home() {
   return (
@@ -38,8 +40,9 @@ function Tankaman() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AdminLoginComponent />} />
+      <Route path="/" element={<GetCourse />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
+      <Route path="/course/:id"  element = {<CourseDetails/>}/>
     </Routes>
   );
 }
