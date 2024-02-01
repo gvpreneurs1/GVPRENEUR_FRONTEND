@@ -1,5 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
+import './CreateCourseForm.css'
 
 const CreateCourseForm = () => {
   const [adminId, setAdminId] = useState('');
@@ -25,7 +26,10 @@ const CreateCourseForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3005/api/create-course', courseData, {
+      const response = await axios.post('http://localhost:3005/api/create-course', {
+        ...courseData,
+        adminId: adminId, // Include adminId in the request body
+      }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
         },
@@ -51,10 +55,10 @@ const CreateCourseForm = () => {
   };
 
   return (
-    <div>
+    <section id='create-course' className="container">
     <h2>Welcome, {adminId}</h2>
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="create-course-form">
       <label>
         Title:
         <input type="text" name="title" value={courseData.title} onChange={handleChange} />
@@ -92,7 +96,7 @@ const CreateCourseForm = () => {
 
       <button type="submit">Create Course</button>
     </form>
-    </div>
+    </section>
   );
 };
 
