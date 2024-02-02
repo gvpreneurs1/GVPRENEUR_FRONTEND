@@ -28,7 +28,7 @@ const CreateCourseForm = () => {
     try {
       const response = await axios.post('http://localhost:3005/api/create-course', {
         ...courseData,
-        adminId: adminId, // Include adminId in the request body
+        adminId: adminId, 
       }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,

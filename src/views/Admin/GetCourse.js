@@ -11,7 +11,12 @@ const GetCourse = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const response = await axios.get('http://localhost:3005/api/get-course/');
+        const response = await axios.get('http://localhost:3005/api/get-course/', {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+          },
+        }
+        );
         
         if (response.status === 201) {
           const { course } = response.data;

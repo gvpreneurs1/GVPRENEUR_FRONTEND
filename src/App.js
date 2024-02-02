@@ -40,8 +40,9 @@ function Tankaman() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<GetCourse />} />
+      <Route path="/" element={<AdminLoginComponent />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
+      <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id"  element = {<CourseDetails/>}/>
     </Routes>
   );
