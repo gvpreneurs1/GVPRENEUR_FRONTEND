@@ -94,6 +94,19 @@ const CourseDetails = () => {
       });
 
       if (response.status === 201) {
+
+        const updatedResponse = await axios.get(`http://localhost:3005/api/get-course/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+          },
+        });
+  
+        if (updatedResponse.status === 201) {
+          const { course } = updatedResponse.data;
+          setCourseData(course);
+        } else {
+          console.error('Failed to fetch updated course details:', updatedResponse.statusText);
+        }  
         console.log('Course edited successfully.');
         setModalIsOpen(false);
       } else {
