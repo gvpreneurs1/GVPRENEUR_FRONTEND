@@ -1,0 +1,21 @@
+/* Custom styles for buttons */
+.custom-edit {
+    border-color: green;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-delete {
+    border-color: red;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .custom-edit:hover {
+    background-color: green;
+  }
+  
+  .custom-delete:hover {
+    background-color: red;
+  }

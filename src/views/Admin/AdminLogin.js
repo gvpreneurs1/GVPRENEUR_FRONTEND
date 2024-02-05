@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AdminLogin.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
 const AdminLoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [adminId, setadminId] = useState('');
   const [accessToken, setAccessToken] = useState('');
   const navigate = useNavigate();
 

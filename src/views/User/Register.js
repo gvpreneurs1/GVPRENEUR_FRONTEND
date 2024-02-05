@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import './Register.css'
 Modal.setAppElement('#root');
 
-function Register() {
+const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',

@@ -14,7 +14,7 @@ import AdminLoginComponent from './views/Admin/AdminLogin';
 import Landing from './views/User/Landing';
 import CreateCourseForm from './views/Admin/CreateCourseForm';
 import GetCourse from './views/Admin/GetCourse';
-import CourseDetails from './views/Admin/CourseDetails'
+import CourseDetails from './views/Admin/CourseDetails';
 
 function Home() {
   return (
@@ -41,6 +41,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<AdminLoginComponent />} />
+      <Route path="/register" element={<Register />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id"  element = {<CourseDetails/>}/>

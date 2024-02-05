@@ -47,7 +47,7 @@ const CourseDetails = () => {
         },
       });
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         console.log('Course deleted successfully.');
         navigate(`/get-course`);
       } else {
@@ -123,36 +123,45 @@ const CourseDetails = () => {
   };
 
   return (
-    <div>
+    <div className="container mt-4">    
       <h2>Course Details</h2>
-
+    
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div>
-          <ul>
-            <h1>this is selected</h1>
-            <strong>Title:</strong> {courseData.title}
-            <br />
-            <strong>Description:</strong> {courseData.description}
-            <br />
-            <strong>Link:</strong> {courseData.link}
-            <br />
-            <strong>Start Date:</strong> {courseData.startDate}
-            <br />
-            <strong>End Date:</strong> {courseData.endDate}
-            <br />
-            <strong>Speaker:</strong> {courseData.speaker}
-            <br />
-            <strong>Host:</strong> {courseData.host}
-            <br />
-            <strong>Attendees:</strong> {courseData.attendees}
-            <br />
-            <hr />
+           <ul className="list-group">
+            <h1>This is selected</h1>
+            <li className="list-group-item">
+              <strong>Title:</strong> {courseData.title}
+            </li>
+            <li className="list-group-item">
+              <strong>Description:</strong> {courseData.description}
+            </li>
+            <li className="list-group-item">
+              <strong>Link:</strong> {courseData.link}
+            </li>
+            <li className="list-group-item">
+              <strong>Start Date:</strong> {courseData.startDate}
+            </li>
+            <li className="list-group-item">
+              <strong>End Date:</strong> {courseData.endDate}
+            </li>
+            <li className="list-group-item">
+              <strong>Speaker:</strong> {courseData.speaker}
+            </li>
+            <li className="list-group-item">
+              <strong>Host:</strong> {courseData.host}
+            </li>
+            <li className="list-group-item">
+              <strong>Attendees:</strong> {courseData.attendees}
+            </li>
           </ul>
 
-          <button onClick={handleDelete}> Delete</button>
-          <button onClick={handleEdit}> Edit </button>
+          <div className="mt-3">
+          <button className="btn btn-danger mr-2 custom-delete" onClick={handleDelete}>Delete</button>
+          <button className="btn btn-primary custom-edit" onClick={handleEdit}>Edit</button>
+          </div>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={handleModalClose}

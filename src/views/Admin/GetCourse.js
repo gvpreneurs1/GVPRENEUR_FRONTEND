@@ -38,29 +38,27 @@ const GetCourse = () => {
     navigate(`/course/${id}`);
   };
   return (
-    <div>
+     <div className="container mt-4">
       <h2>Course Details</h2>
 
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <div className="row">
           {courseData.map((course) => (
-            <li key={course.id}>
-              <strong>ID:</strong> {course.id}<br />
-              <strong>Title:</strong> {course.title}<br />
-              <strong>Description:</strong> {course.description}<br />
-              <strong>Link:</strong> {course.link}<br />
-              <strong>Start Date:</strong> {course.startDate}<br />
-              <strong>End Date:</strong> {course.endDate}<br />
-              <strong>Speaker:</strong> {course.speaker}<br />
-              <strong>Host:</strong> {course.host}<br />
-              <strong>Attendees:</strong> {course.attendees}<br />
-              <button onClick={() => handleDetailsClick(course.id)}>View CourseDetails</button>
-              <hr />
-            </li>
+            <div key={course.id} className="col-md-4 mb-4">
+              <div className="card">
+                <div className="card-body">
+                  <h5 className="card-title">{course.title}</h5>
+                  <p className="card-text"><strong>Description:</strong> {course.description}</p>
+                  <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
+                  <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
+                  <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>
+                </div>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

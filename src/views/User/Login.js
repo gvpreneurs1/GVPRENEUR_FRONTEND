@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'
-import { MDBContainer,  MDBRow,  MDBCol,} from 'mdb-react-ui-kit';
-import { Form, Button, Container, Row } from 'react-bootstrap';
+import './Login.css';
 import axios from 'axios';
 
 const Login = () => {
