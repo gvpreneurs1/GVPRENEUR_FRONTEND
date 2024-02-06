@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AdminNav from './AdminNav';
+import './GetCourse.css';
 
 const GetCourse = () => {
   const [courseData, setCourseData] = useState([]);
@@ -38,7 +40,9 @@ const GetCourse = () => {
     navigate(`/course/${id}`);
   };
   return (
-     <div className="container mt-4">
+    <div style={{ display: 'flex' }}>
+    <AdminNav />
+     <div className="container mt-4 get-course">
       <h2>Course Details</h2>
 
       {loading ? (
@@ -60,6 +64,7 @@ const GetCourse = () => {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 };

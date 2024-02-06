@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 15px;
+    width: 200px;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  .navbar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .navbar button:hover {
+    background-color: #777;
+  }

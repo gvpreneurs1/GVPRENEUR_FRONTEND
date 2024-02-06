@@ -17,6 +17,7 @@ import GetCourse from './views/Admin/GetCourse';
 import CourseDetails from './views/Admin/CourseDetails';
 import GetClientCourse from './views/User/GetClientCourse';
 import ClientCourseDetails from './views/User/ClientCourseDetails'
+import AdminNav from './views/Admin/AdminNav';
 
 function Home() {
   return (
@@ -39,20 +40,26 @@ function Tankaman() {
 }
 
 
+
 function App() {
   return (
+
+
     <Routes>
+      
       {/* Admin routes */}
       <Route path="/" element={<AdminLoginComponent />} />
       <Route path="/register" element={<Register />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
-      <Route path="/course/:id"  element = {<CourseDetails/>}/>
+      <Route path="/course/:id" element = {<CourseDetails/>}/>
 
       {/* Client routes */}
       <Route path="/client-login" element={<Login />} />
-      <Route path='/get-client-course' element= { <ClientCourseDetails />} />
+      <Route path='/get-client-course' element= { <GetClientCourse />} />
+      <Route path='/client-course/:id' element= { <ClientCourseDetails />} />
     </Routes>
+
   );
 }
 

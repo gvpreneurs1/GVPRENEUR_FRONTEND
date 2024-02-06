@@ -1,6 +1,7 @@
 import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 import './CreateCourseForm.css'
+import AdminNav from './AdminNav';
 
 const CreateCourseForm = () => {
   const [adminId, setAdminId] = useState('');
@@ -55,7 +56,11 @@ const CreateCourseForm = () => {
   };
 
   return (
-    <section id='create-course' className="container">
+    <div style={{ display: 'flex' }}> 
+    
+    <AdminNav />
+    
+    <div className="container create-course">
     <h2>Welcome, {adminId}</h2>
 
     <form onSubmit={handleSubmit} className="create-course-form">
@@ -96,7 +101,8 @@ const CreateCourseForm = () => {
 
       <button type="submit">Create Course</button>
     </form>
-    </section>
+    </div>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import './CoursDetails.css';
+import AdminNav from './AdminNav';
 
 Modal.setAppElement('#root');
 
@@ -12,6 +13,7 @@ const CourseDetails = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
+
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -123,7 +125,11 @@ const CourseDetails = () => {
     setformData({ ...formData, [name]: value });
   };
 
+  const backButton = () => {
+    navigate(`/get-course`)
+  }
   return (
+
     <div className="container mt-4">    
       <h2>Course Details</h2>
     
@@ -208,13 +214,15 @@ const CourseDetails = () => {
           </div>
       </form>
     </div>
-  </div>
+    </div>
           </Modal>
+          
         </div>
         
       )}
-
+  <button onClick={backButton}>Ge baak ge baak</button>
     </div>
+
   );
 };
 
