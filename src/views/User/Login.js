@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './Login.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const navigate = useNavigate();
+    const [accessToken, setAccessToken] = useState('');
+
     const logo = `${process.env.PUBLIC_URL}/images/logo.png`;
     
     const handleLogin = async () => {
@@ -15,8 +18,11 @@ const Login = () => {
             password,
             role: 'user', // Set the role to 'user' by default
           });
-    
-          // Handle successful login response
+          localStorage.setItem('userId', response.data.userId);
+      
+          setAccessToken(response.data.accessToken);
+          axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.accessToken}`;
+          navigate(`/get-client-course`);
           console.log(response.data);
         } catch (error) {
           // Handle login error

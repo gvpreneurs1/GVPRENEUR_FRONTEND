@@ -20,8 +20,7 @@ const AdminLoginComponent = () => {
       });
       localStorage.setItem('accessToken', response.data.accessToken);
       localStorage.setItem('adminId', response.data.adminId);
-    
-
+      
       setAccessToken(response.data.accessToken);
       axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.accessToken}`;
       navigate(`/create-course`);

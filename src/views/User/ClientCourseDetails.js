@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
-import './CoursDetails.css';
 
 Modal.setAppElement('#root');
 
-const CourseDetails = () => {
+const ClientCourseDetails = () => {
   const [courseData, setCourseData] = useState({});
   const [formData, setformData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -218,4 +217,4 @@ const CourseDetails = () => {
   );
 };
 
-export default CourseDetails;
+export default ClientCourseDetails;

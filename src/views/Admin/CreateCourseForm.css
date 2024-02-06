@@ -1,13 +1,43 @@
-.create-course-form label{
-    display: block;
-    margin-bottom: 8px;
-  
+#create-course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.create-course-form input,textarea{
-  display: block;
+.create-course-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  box-sizing: border-box; 
-  margin-bottom: 16px; 
-  
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
+.create-course-form label {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.create-course-form label input,
+.create-course-form label textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-course-form button {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-course-form button:hover {
+  background-color: #4CAF50; /* Green for Create Course */
+  transform: scale(1.1);
 }
