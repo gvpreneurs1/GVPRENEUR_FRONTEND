@@ -58,6 +58,7 @@ const GetCourse = () => {
                   <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
                   <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
                   <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>
+
                 </div>
               </div>
             </div>
