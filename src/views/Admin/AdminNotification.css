@@ -1,0 +1,12 @@
+#AdminNotification {
+    display: flex;
+}
+
+.admin-notification-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-notification-form button {
+    max-width: fit-content;
+}

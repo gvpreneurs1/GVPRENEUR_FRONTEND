@@ -19,7 +19,7 @@ const Login = () => {
             role: 'user', // Set the role to 'user' by default
           });
           localStorage.setItem('userId', response.data.userId);
-      
+          localStorage.setItem('accessToken', response.data.accessToken);
           setAccessToken(response.data.accessToken);
           axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.accessToken}`;
           navigate(`/get-client-course`);

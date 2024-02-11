@@ -208,7 +208,7 @@ const CourseDetails = () => {
                 Host:
                  <input type="text" name="host" value={formData.host || ''} onChange={handleInputChange} />
                 </label>
-      <div className="animated-buttons">
+          <div className="animated-buttons">
           <button type="button" className="btn btn-primary animated-button" onClick={handleEditSubmit}>Save Changes</button>
           <button type="button" className="btn btn-secondary animated-button" onClick={handleModalClose}>Cancel</button>
           </div>
@@ -220,7 +220,7 @@ const CourseDetails = () => {
         </div>
         
       )}
-  <button onClick={backButton}>Ge baak ge baak</button>
+  <button onClick={backButton}>Get back</button>
     </div>
 
   );

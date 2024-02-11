@@ -14,7 +14,7 @@ const AdminNav = () => {
         <div className="navbar">    
         <button onClick={() => handleNavigate('/create-course')}>Create Course</button>
         <button onClick={() => handleNavigate('/get-course')}>Get Course</button>
-        <button onClick={() => handleNavigate('/course/:id')}>Course</button>
+        <button onClick={() => handleNavigate('/admin-notification')}>Create Notification</button>
         </div>
     )
 }

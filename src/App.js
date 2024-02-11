@@ -18,6 +18,8 @@ import CourseDetails from './views/Admin/CourseDetails';
 import GetClientCourse from './views/User/GetClientCourse';
 import ClientCourseDetails from './views/User/ClientCourseDetails'
 import AdminNav from './views/Admin/AdminNav';
+import AdminNotification from './views/Admin/AdminNotification';
+import GetNotification from './views/User/GetNotification';
 
 function Home() {
   return (
@@ -53,11 +55,13 @@ function App() {
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id" element = {<CourseDetails/>}/>
-
+      <Route path="/admin-notification" element = {< AdminNotification/>}/>
+      
       {/* Client routes */}
       <Route path="/client-login" element={<Login />} />
       <Route path='/get-client-course' element= { <GetClientCourse />} />
       <Route path='/client-course/:id' element= { <ClientCourseDetails />} />
+      <Route path='/GetNotification/' element= { <GetNotification />} />
     </Routes>
 
   );

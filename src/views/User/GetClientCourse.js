@@ -7,6 +7,7 @@ const GetClientCourse = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -39,7 +40,7 @@ const GetClientCourse = () => {
   };
   return (
      <div className="container mt-4">
-      <h2>Course Details</h2>
+      <h2>Course Details `{userId}`</h2>
         <h1> jiwan maa </h1>
       {loading ? (
         <p>Loading...</p>
