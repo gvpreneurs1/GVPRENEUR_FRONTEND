@@ -88,10 +88,17 @@ const CreateCourseForm = () => {
         End Date:
         <input type="date" name="endDate" value={courseData.endDate} onChange={handleChange} />
       </label>
-
+    
       <label>
-        Speaker:
-        <input type="text" name="speaker" value={courseData.speaker} onChange={handleChange} />
+      Speaker: 
+      <select name="speaker" value={courseData.speaker} onChange={handleChange}>
+        <option value="Purna Bahadur Bista">Purna Bahadur Bista</option>
+        <option value="Kiran Tamang">Kiran Tamang</option>
+        <option value="Tankaman Shrestha">Tankaman Shrestha</option>
+        <option value="Apsara Shrestha">Apsara Shrestha</option>
+        <option value="Suman Shrestha">Suman Shrestha</option>
+        <option value="Surakshya Bhattarai">Saurav Raj Giri</option>
+      </select>
       </label>
 
       <label>

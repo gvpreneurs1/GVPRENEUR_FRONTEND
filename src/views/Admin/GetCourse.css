@@ -1,3 +1,11 @@
 .get-course {
 display: block;
 }
+
+.card-body img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 365px;
+    height: 320px;
+}

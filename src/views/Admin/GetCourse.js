@@ -9,6 +9,12 @@ const GetCourse = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const Tankaman1 = `${process.env.PUBLIC_URL}/images/Tankaman1.png`;
+  const Apsara = `${process.env.PUBLIC_URL}/images/Apsara.jpg`;
+  const Kiran = `${process.env.PUBLIC_URL}/images/Kiran.png`;
+  const Purna = `${process.env.PUBLIC_URL}/images/Purna.png`;
+  const Suman = `${process.env.PUBLIC_URL}/images/Suman.png`;
+  const Saurav = `${process.env.PUBLIC_URL}/images/Saurav.jpg`;
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -39,6 +45,26 @@ const GetCourse = () => {
   const handleDetailsClick = (id) => {
     navigate(`/course/${id}`);
   };
+
+  const getSpeakerPhoto = (speaker) => {
+    switch (speaker) {
+      case 'Purna Bahadur Bista':
+        return Purna;
+      case 'Kiran Tamang':
+        return Kiran;
+      case 'Tankaman Shrestha':
+        return Tankaman1;
+      case 'Apsara Shrestha':
+        return Apsara;
+      case 'Suman Shrestha':
+        return Suman;
+      case 'Saurav Raj Giri':
+        return Saurav;
+      default:
+        return null; // You can return a default image or handle it as per your requirement
+    }
+  };
+
   return (
     <div style={{ display: 'flex' }}>
     <AdminNav />
@@ -53,7 +79,10 @@ const GetCourse = () => {
             <div key={course.id} className="col-md-4 mb-4">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{course.title}</h5>
+                {getSpeakerPhoto(course.speaker) && (
+                    <img src={getSpeakerPhoto(course.speaker)} alt={`Photo of ${course.speaker}`} className="speaker-photo" />
+                  )}
+                  <h2 className="card-title">{course.title}</h2>
                   <p className="card-text"><strong>Description:</strong> {course.description}</p>
                   <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
                   <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
