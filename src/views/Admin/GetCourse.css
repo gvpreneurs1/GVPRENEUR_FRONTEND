@@ -1,5 +1,6 @@
 .get-course {
 display: block;
+margin-left: 200px;
 }
 
 .card-body img{
@@ -9,3 +10,30 @@ display: block;
     width: 365px;
     height: 320px;
 }
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+.card-body h3{
+    display: flex;
+    justify-content: center;
+}
+
+.card-text {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px; /* Adjust this value as needed for spacing */
+  }
+  
+.card-text strong {
+    margin-right: 10px; /* Adjust this value for space between label and text */
+  }
+
+.card-body button{
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+  }

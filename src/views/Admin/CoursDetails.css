@@ -1,3 +1,9 @@
+#CourseDetails {
+  display: flex;
+  justify-content: center;
+ 
+}
+
 /* Custom styles for buttons */
 .custom-edit {
     border-color: green;
@@ -76,3 +82,16 @@
       transform: translateX(0);
     }
   }
+
+.details-profile img{
+    width: 400px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+.details-profile {
+ display: flex;
+
+}

@@ -15,6 +15,7 @@ const GetCourse = () => {
   const Purna = `${process.env.PUBLIC_URL}/images/Purna.png`;
   const Suman = `${process.env.PUBLIC_URL}/images/Suman.png`;
   const Saurav = `${process.env.PUBLIC_URL}/images/Saurav.jpg`;
+  const placeholder = `${process.env.PUBLIC_URL}/images/placeholder.png`;
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -61,7 +62,7 @@ const GetCourse = () => {
       case 'Saurav Raj Giri':
         return Saurav;
       default:
-        return null; // You can return a default image or handle it as per your requirement
+        return placeholder;
     }
   };
 
@@ -75,15 +76,14 @@ const GetCourse = () => {
         <p>Loading...</p>
       ) : (
         <div className="row">
-          {courseData.map((course) => (
+          {courseData.reverse().map((course) => (
             <div key={course.id} className="col-md-4 mb-4">
               <div className="card">
                 <div className="card-body">
                 {getSpeakerPhoto(course.speaker) && (
                     <img src={getSpeakerPhoto(course.speaker)} alt={`Photo of ${course.speaker}`} className="speaker-photo" />
                   )}
-                  <h2 className="card-title">{course.title}</h2>
-                  <p className="card-text"><strong>Description:</strong> {course.description}</p>
+                  <h3 className="card-title">{course.title}</h3>
                   <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
                   <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
                   <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>

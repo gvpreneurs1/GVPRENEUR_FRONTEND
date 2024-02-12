@@ -14,6 +14,32 @@ const CourseDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const Tankaman1 = `${process.env.PUBLIC_URL}/images/Tankaman1.png`;
+  const Apsara = `${process.env.PUBLIC_URL}/images/Apsara.jpg`;
+  const Kiran = `${process.env.PUBLIC_URL}/images/Kiran.png`;
+  const Purna = `${process.env.PUBLIC_URL}/images/Purna.png`;
+  const Suman = `${process.env.PUBLIC_URL}/images/Suman.png`;
+  const Saurav = `${process.env.PUBLIC_URL}/images/Saurav.jpg`;
+  const placeholder = `${process.env.PUBLIC_URL}/images/placeholder.png`;
+
+  const getSpeakerPhoto = (speaker) => {
+    switch (speaker) {
+      case 'Purna Bahadur Bista':
+        return Purna;
+      case 'Kiran Tamang':
+        return Kiran;
+      case 'Tankaman Shrestha':
+        return Tankaman1;
+      case 'Apsara Shrestha':
+        return Apsara;
+      case 'Suman Shrestha':
+        return Suman;
+      case 'Saurav Raj Giri':
+        return Saurav;
+      default:
+        return placeholder;
+    }
+  };
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -129,6 +155,7 @@ const CourseDetails = () => {
     navigate(`/get-course`)
   }
   return (
+    <section id='CourseDetails'>
 
     <div className="container mt-4">    
       <h2>Course Details</h2>
@@ -136,9 +163,12 @@ const CourseDetails = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="details-profile">
+           {getSpeakerPhoto(courseData.speaker) && (
+            <img src={getSpeakerPhoto(courseData.speaker)} alt={`Photo of ${courseData.speaker}`} className="speaker-photo" />
+            )}
+                  
            <ul className="list-group">
-            <h1>This is selected</h1>
             <li className="list-group-item">
               <strong>Title:</strong> {courseData.title}
             </li>
@@ -165,7 +195,12 @@ const CourseDetails = () => {
             </li>
           </ul>
 
-          <div className="mt-3">
+          
+    </div>
+        
+      )}
+      
+      <div className="mt-3">
           <button className="btn btn-danger mr-2 custom-delete" onClick={handleDelete}>Delete</button>
           <button className="btn btn-primary custom-edit" onClick={handleEdit}>Edit</button>
           </div>
@@ -216,13 +251,9 @@ const CourseDetails = () => {
     </div>
     </div>
           </Modal>
-          
-        </div>
-        
-      )}
   <button onClick={backButton}>Get back</button>
     </div>
-
+    </section>
   );
 };
 

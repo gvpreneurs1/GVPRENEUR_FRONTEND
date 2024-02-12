@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.admin-notification{
+    margin-left: 235px;
+    padding-top: 30px;
+}
+
 .admin-notification-form{
     display: flex;
     flex-direction: column;
