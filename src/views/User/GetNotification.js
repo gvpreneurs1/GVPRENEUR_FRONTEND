@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import ClientNav from './ClientNav';
 
 const GetNotification = () => {
   const [notifications, setNotifications] = useState([]);
@@ -61,22 +62,36 @@ const GetNotification = () => {
   };
 
   return (
-    <div>
-      <h2>Notifications</h2>
-      <ul>
+    <section> 
+    <ClientNav />
+    <div className="container mt-4">
+      
+      <h2 className="text-2xl font-bold mb-4">Notifications</h2>
+      <div className="row">
         {notifications.map((notification) => (
-          <li key={notification.ID}>
-            <strong>ID:</strong> {notification.ID}
-            <br />
-            <strong>Title:</strong> {notification.title}
-            <br />
-            <strong>Message:</strong> {notification.message}
-            <br />
-            <button onClick={() => handleDelete(notification.ID)}>Delete</button>
-          </li>
+          <div key={notification.ID} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div className="bg-white p-4 rounded shadow-md">
+              <p>
+                <strong>ID:</strong> {notification.ID}
+              </p>
+              <p>
+                <strong>Title:</strong> {notification.title}
+              </p>
+              <p>
+                <strong>Message:</strong> {notification.message}
+              </p>
+              <button
+                onClick={() => handleDelete(notification.ID)}
+                className="bg-red-500 text-white px-4 py-2 rounded mt-2"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
+    </section>
   );
 };
 

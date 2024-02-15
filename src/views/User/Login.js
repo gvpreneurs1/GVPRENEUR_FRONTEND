@@ -30,6 +30,9 @@ const Login = () => {
         }
       };
 
+      const handleRegister = () => {
+        navigate(`/register`)
+      }
 
       return (
         <section id='User-Login'>
@@ -50,7 +53,8 @@ const Login = () => {
                   <label htmlFor="password" className="form-label">Password</label>
                   <input type="password" className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="button" className="btn btn-primary" onClick={handleLogin}>Login</button>
+                <button type="button" className="button mr-36" onClick={handleLogin}>Login</button>
+                <button type="button" className="button bg-lime-500 text-white" onClick={handleRegister}>Register</button>
               </form>
             </div>
           </div>

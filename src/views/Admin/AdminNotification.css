@@ -14,4 +14,6 @@
 
 .admin-notification-form button {
     max-width: fit-content;
+    background-color: blue;
+    border-color: black;
 }

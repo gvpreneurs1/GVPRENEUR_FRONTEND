@@ -70,9 +70,9 @@ const GetClientCourse = () => {
   return (
     <section> 
      <ClientNav />
-     <div className="container mt-4">
-  
-      <h2>Course Details `{userId}`</h2>
+     <div className="container mt-4 mx-auto flex justify-center row">
+
+     <h2>Course Details `{userId}`</h2>
         <h1> List of Meetings </h1>
       {loading ? (
         <p>Loading...</p>

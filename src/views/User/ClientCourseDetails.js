@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import ClientNav from './ClientNav';
 
 const ClientCourseDetails = () => {
   const [courseData, setCourseData] = useState({});
@@ -62,14 +62,20 @@ const ClientCourseDetails = () => {
     fetchCourseDetails();
   }, [id]);
 
+  const handleBack = () => {
+    navigate(`/get-client-course`)
+  }
 
   return (
-    <div className="container mt-4 mx-auto bg-red-500">    
+    <section> 
+     <ClientNav />
+    <div className="container mt-4 mx-auto block justify-center">    
       <h2>Course Details</h2>
 
       {loading ? (
         <p>Loading...</p>
       ) : (
+
         <div className="details-profile">
             {getSpeakerPhoto(courseData.speaker) && (
             <img src={getSpeakerPhoto(courseData.speaker)} alt={`Photo of ${courseData.speaker}`} className="speaker-photo" />
@@ -104,8 +110,9 @@ const ClientCourseDetails = () => {
         </div>
         
       )}
-
+      <button className='button' onClick={handleBack}>Go Back</button>
     </div>
+    </section>
   );
 };
 

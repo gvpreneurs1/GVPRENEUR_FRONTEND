@@ -4,8 +4,22 @@
   }
 
 .Registration-Form div{
-    width: 50%;
-  }
+  max-width: 320px;  
+}
 
   /* Add any additional styling as needed */
-  
+
+
+  /* Media Query for screens with width above 425px */
+@media (min-width: 425px) {
+  .Registration-Form div {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .Registration-Form label {
+    display: block;
+  }
+
+}

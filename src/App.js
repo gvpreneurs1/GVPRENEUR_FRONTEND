@@ -45,13 +45,10 @@ function Tankaman() {
 
 function App() {
   return (
-
-
     <Routes>
       
       {/* Admin routes */}
       <Route path="/" element={<AdminLoginComponent />} />
-      <Route path="/register" element={<Register />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id" element = {<CourseDetails/>}/>
@@ -59,6 +56,7 @@ function App() {
       
       {/* Client routes */}
       <Route path="/client-login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route path='/get-client-course' element= { <GetClientCourse />} />
       <Route path='/client-course/:id' element= { <ClientCourseDetails />} />
       <Route path='/GetNotification/' element= { <GetNotification />} />
