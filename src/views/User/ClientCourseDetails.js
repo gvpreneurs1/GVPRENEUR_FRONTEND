@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import ClientNav from './ClientNav';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ClientCourseDetails = () => {
   const [courseData, setCourseData] = useState({});
@@ -66,6 +68,35 @@ const ClientCourseDetails = () => {
     navigate(`/get-client-course`)
   }
 
+  const handleEnroll = async () => {
+    try {
+      const userId = localStorage.getItem('userId');
+
+      if (!userId) {
+        console.error('User ID not found in localStorage');
+        return;
+      }
+
+      const response = await axios.post(`http://localhost:3005/api/add-user-course/${userId}/${id}`);
+
+      if (response.status === 201) {
+        toast.success('User enrolled successfully', { position: 'top-center' });
+        // Optionally update the UI or show a success message
+        console.log('User enrolled successfully');
+      } else {
+        console.error('Failed to enroll user:', response.statusText);
+      }
+    } catch (error) {
+      if (error.response.status === 409) {
+        // Show toast error when the user is already enrolled
+        toast.error('User is already enrolled in this course',);
+      } else {
+        console.error('Error enrolling user:', error);
+      }
+    }
+  };
+
+
   return (
     <section> 
      <ClientNav />
@@ -103,14 +134,19 @@ const ClientCourseDetails = () => {
             <li className="list-group-item">
               <strong>Host:</strong> {courseData.host}
             </li>
-            <li className="list-group-item">
-              <strong>Attendees:</strong> {courseData.attendees}
+            <li>
+            <button className="button" onClick={handleEnroll}>
+          Enroll
+        </button>
             </li>
           </ul>
         </div>
         
       )}
       <button className='button' onClick={handleBack}>Go Back</button>
+
+      <ToastContainer />
+    
     </div>
     </section>
   );

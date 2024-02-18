@@ -4,7 +4,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 import './Register.css'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { useParams, useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
 Modal.setAppElement('#root');
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +20,8 @@ const Register = () => {
     mobile: '',
     role: 'user',
   });
+
+  const navigate = useNavigate();
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [otpData, setOtpData] = useState({
@@ -126,33 +133,86 @@ const Register = () => {
     }
   };
 
+  const handleLogin = async () => {
+    navigate(`/client-login`);
+  }
+
   return (
 <section id="Register" className="registration-section">
       <div className="container">
         <h1>Registration Form</h1>
-        <form onSubmit={handleSubmitForm}  className='Registration-Form'>
-          <div className="mb-3">
-            <label htmlFor="username">Username:</label>
-            <input type="text" className="form-control" name="username" value={formData.username} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email">Email:</label>
-            <input type="email" className="form-control" name="email" value={formData.email} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password">Password:</label>
-            <input type="password" className="form-control" name="password" value={formData.password} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="address">Address:</label>
-            <input type="text" className="form-control" name="address" value={formData.address} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="mobile">Mobile:</label>
-            <input type="text" className="form-control" name="mobile" value={formData.mobile} onChange={handleChange} />
-          </div>
-          <button type="submit" className="btn btn-primary">Register</button>
-        </form>
+        <Box
+      component="form"
+      onSubmit={handleSubmitForm}
+      sx={{
+        '& > :not(style)': { mb: 3 },
+        maxWidth: '400px', // Adjust the width as needed
+        margin: 'auto', // Center the form
+      }}
+      noValidate
+      autoComplete="off"
+      className='Registration-Form'
+    >
+      <TextField
+        id="username"
+        label="Username"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
+      />
+      <TextField
+        id="email"
+        label="Email"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <TextField
+        id="password"
+        label="Password"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        type="password"
+      />
+      <TextField
+        id="address"
+        label="Address"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        name="address"
+        value={formData.address}
+        onChange={handleChange}
+      />
+      <TextField
+        id="mobile"
+        label="Mobile"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        name="mobile"
+        value={formData.mobile}
+        onChange={handleChange}
+      />
+      <Button type="submit" variant="contained" color="primary">
+        Register
+      </Button>
+      <Button type="button" variant="contained" color="secondary" onClick={handleLogin}>
+      Login
+      </Button>
+      </Box>
+
+
         <ToastContainer />
         <Modal
           isOpen={modalIsOpen}

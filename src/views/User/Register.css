@@ -3,23 +3,13 @@
     padding: 50px 0;
   }
 
-.Registration-Form div{
-  max-width: 320px;  
-}
-
-  /* Add any additional styling as needed */
-
-
-  /* Media Query for screens with width above 425px */
-@media (min-width: 425px) {
-  .Registration-Form div {
-    max-width: 50%;
+  .registration-section h1{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-self: center;
   }
 
-  .Registration-Form label {
+  .registration-section button{
     display: block;
+    margin-bottom: 10px;
   }
-
-}

@@ -86,7 +86,6 @@ const GetClientCourse = () => {
                     <img src={getSpeakerPhoto(course.speaker)} alt={`Photo of ${course.speaker}`} className="speaker-photo" />
                   )}
                   <h5 className="card-title">{course.title}</h5>
-                  <p className="card-text"><strong>Description:</strong> {course.description}</p>
                   <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
                   <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
                   <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>

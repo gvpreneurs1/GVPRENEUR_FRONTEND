@@ -54,7 +54,7 @@ const Login = () => {
                   <input type="password" className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="button" className="button mr-36" onClick={handleLogin}>Login</button>
-                <button type="button" className="button bg-lime-500 text-white" onClick={handleRegister}>Register</button>
+                <button type="button" className="button" onClick={handleRegister}>Register</button>
               </form>
             </div>
           </div>
