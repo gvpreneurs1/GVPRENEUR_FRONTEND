@@ -4,9 +4,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ClientNav from './ClientNav';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Modal from 'react-modal';
+Modal.setAppElement('#root');
 
 const ClientCourseDetails = () => {
-  const [courseData, setCourseData] = useState({});
+  const [courseData, setCourseData] = useState({ attendees: [] });
   const [formData, setformData] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -19,6 +21,16 @@ const ClientCourseDetails = () => {
   const Suman = `${process.env.PUBLIC_URL}/images/Suman.png`;
   const Saurav = `${process.env.PUBLIC_URL}/images/Saurav.jpg`;
   const placeholder = `${process.env.PUBLIC_URL}/images/placeholder.png`;
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
 
   const getSpeakerPhoto = (speaker) => {
     switch (speaker) {
@@ -96,7 +108,6 @@ const ClientCourseDetails = () => {
     }
   };
 
-
   return (
     <section> 
      <ClientNav />
@@ -139,6 +150,11 @@ const ClientCourseDetails = () => {
           Enroll
         </button>
             </li>
+            <li>
+            <button className="button" onClick={handleOpenModal}>
+              Open Attendees Modal
+            </button>
+            </li>
           </ul>
         </div>
         
@@ -148,6 +164,20 @@ const ClientCourseDetails = () => {
       <ToastContainer />
     
     </div>
+    <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={handleCloseModal}
+        contentLabel="Attendees Modal"
+      >
+        <h2>Attendees List</h2>
+        <ul>
+          {courseData.attendees.map((attendee, index) => (
+            <li key={index}>{attendee}</li>
+          ))}
+        </ul>
+        <button onClick={handleCloseModal}>Close</button>
+      </Modal>
+
     </section>
   );
 };
