@@ -146,12 +146,12 @@ const ClientCourseDetails = () => {
               <strong>Host:</strong> {courseData.host}
             </li>
             <li>
-            <button className="button" onClick={handleEnroll}>
+            <button className="button mt-2" onClick={handleEnroll}>
           Enroll
         </button>
             </li>
             <li>
-            <button className="button" onClick={handleOpenModal}>
+            <button className="button mt-2" onClick={handleOpenModal}>
               Open Attendees Modal
             </button>
             </li>

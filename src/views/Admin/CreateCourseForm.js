@@ -97,7 +97,7 @@ const CreateCourseForm = () => {
         <option value="Tankaman Shrestha">Tankaman Shrestha</option>
         <option value="Apsara Shrestha">Apsara Shrestha</option>
         <option value="Suman Shrestha">Suman Shrestha</option>
-        <option value="Surakshya Bhattarai">Saurav Raj Giri</option>
+        <option value="Saurav Raj Giri">Saurav Raj Giri</option>
       </select>
       </label>
 

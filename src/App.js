@@ -20,6 +20,7 @@ import ClientCourseDetails from './views/User/ClientCourseDetails'
 import AdminNav from './views/Admin/AdminNav';
 import AdminNotification from './views/Admin/AdminNotification';
 import GetNotification from './views/User/GetNotification';
+import BlazeProduct from './views/User/BlazeProduct';
 
 function Home() {
   return (
@@ -48,7 +49,8 @@ function App() {
     <Routes>
       
       {/* Admin routes */}
-      <Route path="/" element={<AdminLoginComponent />} />
+      <Route path="/" element={<BlazeProduct />} />
+      <Route path="/admin-login" element={<AdminLoginComponent />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id" element = {<CourseDetails/>}/>
