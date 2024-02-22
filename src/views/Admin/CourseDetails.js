@@ -43,6 +43,14 @@ const CourseDetails = () => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
+
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
@@ -179,10 +187,11 @@ const CourseDetails = () => {
               <strong>Link:</strong> {courseData.link}
             </li>
             <li className="list-group-item">
-              <strong>Start Date:</strong> {courseData.startDate}
+            <strong>Start Date:</strong>  {" "} {new Date(courseData.startDate).toISOString().split("T")[0]}
             </li>
             <li className="list-group-item">
-              <strong>End Date:</strong> {courseData.endDate}
+              <strong>End Date:</strong> 
+               {" "} {new Date(courseData.endDate).toISOString().split("T")[0]}
             </li>
             <li className="list-group-item">
               <strong>Speaker:</strong> {courseData.speaker}
@@ -251,8 +260,13 @@ const CourseDetails = () => {
     </div>
     </div>
           </Modal>
-  <button onClick={backButton}>Get back</button>
-    </div>
+          <button
+            onClick={backButton}
+            className="border border-solid border-black mt-1 px-4 py-2"  style={{ padding: '4px' }}
+          >
+          Get back
+          </button>
+</div>
     </section>
   );
 };

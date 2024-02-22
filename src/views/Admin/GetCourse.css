@@ -24,7 +24,6 @@ margin-left: 200px;
 
 .card-text {
     display: flex;
-    align-items: baseline;
     margin-bottom: 8px; /* Adjust this value as needed for spacing */
   }
   

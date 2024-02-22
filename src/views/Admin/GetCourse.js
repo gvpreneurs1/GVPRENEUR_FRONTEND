@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AdminNav from './AdminNav';
 import './GetCourse.css';
+import { Mail, MessageCircle, Link, Calendar, User, Users, Monitor } from 'react-feather';
 
 const GetCourse = () => {
   const [courseData, setCourseData] = useState([]);
@@ -84,8 +85,17 @@ const GetCourse = () => {
                     <img src={getSpeakerPhoto(course.speaker)} alt={`Photo of ${course.speaker}`} className="speaker-photo" />
                   )}
                   <h3 className="card-title">{course.title}</h3>
-                  <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
-                  <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
+                  <p className="card-text"><strong>
+                  <div className="flex-container">
+                          <Calendar /> Start Date:
+                        </div>
+                        </strong> {" "}
+                          {new Date(course.startDate).toISOString().split("T")[0]}</p>
+                  <p className="card-text">
+                    <strong> <div className="flex-container">
+                    <Users /> Speaker:
+                    </div>
+                    </strong> {course.speaker}</p>
                   <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>
 
                 </div>

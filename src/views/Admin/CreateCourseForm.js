@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 import './CreateCourseForm.css'
 import AdminNav from './AdminNav';
+import { Mail, MessageCircle, Link, Calendar, User, Users, Monitor } from 'react-feather';
 
 const CreateCourseForm = () => {
   const [adminId, setAdminId] = useState('');
@@ -64,34 +65,48 @@ const CreateCourseForm = () => {
     <h2>Welcome, {adminId}</h2>
 
     <form onSubmit={handleSubmit} className="create-course-form">
-      <label>
-        Title:
+      <label >
+      <div className="flex-container">
+            <Mail /> Title:
+          </div>
         <input type="text" name="title" value={courseData.title} onChange={handleChange} />
       </label>
 
-      <label>
+      <label>     
+      <div className="flex-container">  
+      <MessageCircle />
         Description:
+        </div>
         <textarea name="description" value={courseData.description} onChange={handleChange} />
       </label>
 
       <label>
-        Link:
+      <div className="flex-container">
+            <Link /> Link:
+          </div>
+
         <input type="text" name="link" value={courseData.link} onChange={handleChange} />
       </label>
 
       <label>
-        Start Date:
+      <div className="flex-container">
+            <Calendar /> Start Date:
+          </div>
         <input type="date" name="startDate" value={courseData.startDate} onChange={handleChange} />
       </label>
 
       <label>
-        End Date:
+      <div className="flex-container">
+            <Calendar /> End Date:
+          </div>
         <input type="date" name="endDate" value={courseData.endDate} onChange={handleChange} />
       </label>
     
       <label>
-      Speaker: 
-      <select name="speaker" value={courseData.speaker} onChange={handleChange}>
+      <div className="flex-container">
+        <Users /> Speaker:
+      </div>
+        <select name="speaker" value={courseData.speaker} onChange={handleChange}>
         <option value="Purna Bahadur Bista">Purna Bahadur Bista</option>
         <option value="Kiran Tamang">Kiran Tamang</option>
         <option value="Tankaman Shrestha">Tankaman Shrestha</option>
@@ -102,7 +117,9 @@ const CreateCourseForm = () => {
       </label>
 
       <label>
-        Host:
+        <div className="flex-container">
+           <User /> Host:
+        </div>
         <input type="text" name="host" value={courseData.host} onChange={handleChange} />
       </label>
 
