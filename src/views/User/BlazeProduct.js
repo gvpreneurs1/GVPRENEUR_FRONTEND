@@ -11,7 +11,7 @@ const BlazeProduct = ({ productData }) => {
           "product_service_charge": "0",
           "product_code": "EPAYTEST",
           "signed_field_names": "total_amount,transaction_uuid,product_code",
-          "success_url": "http://localhost:3005/client-login",
+          "success_url": "http://localhost:3000/client-login",
           "failure_url": "http://google.com",
           "tax_amount": "0",
           "total_amount": "100",

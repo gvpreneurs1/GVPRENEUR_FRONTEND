@@ -60,7 +60,7 @@ const AdminNotification = () => {
     <section id="AdminNotification">
       <AdminNav />
       <div className="container admin-notification">
-        <form onSubmit={handleSubmit} className="admin-notification-form border-color: rgb(0 0 0);">
+        <form onSubmit={handleSubmit} className="admin-notification-form">
           <label>
             Title:
             <input type="text" name="title" value={notificationData.title} onChange={handleChange} />

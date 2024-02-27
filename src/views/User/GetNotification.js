@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ClientNav from './ClientNav';
+import Footer from '../../components/Footer/Footer';
 
 const GetNotification = () => {
   const [notifications, setNotifications] = useState([]);
@@ -91,6 +92,7 @@ const GetNotification = () => {
         ))}
       </div>
     </div>
+    <Footer />
     </section>
   );
 };

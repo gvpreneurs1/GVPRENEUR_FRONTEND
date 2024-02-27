@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import './CoursDetails.css';
 import AdminNav from './AdminNav';
+import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
 
 Modal.setAppElement('#root');
 
@@ -176,35 +177,59 @@ const CourseDetails = () => {
             <img src={getSpeakerPhoto(courseData.speaker)} alt={`Photo of ${courseData.speaker}`} className="speaker-photo" />
             )}
                   
-           <ul className="list-group">
-            <li className="list-group-item">
-              <strong>Title:</strong> {courseData.title}
-            </li>
-            <li className="list-group-item">
-              <strong>Description:</strong> {courseData.description}
-            </li>
-            <li className="list-group-item">
-              <strong>Link:</strong> {courseData.link}
-            </li>
-            <li className="list-group-item">
-            <strong>Start Date:</strong>  {" "} {new Date(courseData.startDate).toISOString().split("T")[0]}
-            </li>
-            <li className="list-group-item">
-              <strong>End Date:</strong> 
-               {" "} {new Date(courseData.endDate).toISOString().split("T")[0]}
-            </li>
-            <li className="list-group-item">
-              <strong>Speaker:</strong> {courseData.speaker}
-            </li>
-            <li className="list-group-item">
-              <strong>Host:</strong> {courseData.host}
-            </li>
-            <li className="list-group-item">
-              <strong>Attendees:</strong> {courseData.attendees}
-            </li>
-          </ul>
-
-          
+                  <table>
+                    <tr>
+                      <td>   
+                        <div className="flex-container">
+                          <Mail /> <b>Title:</b>
+                        </div></td>
+                      <td>{courseData.title}</td>
+                    </tr>
+                    <tr>
+                      <td><div className="flex-container">  
+                        <MessageCircle />
+                        <b> Description:</b>
+                        </div></td>
+                           
+                      <td>{courseData.description}</td>
+                    </tr>
+                    <tr>
+                      <td><div className="flex-container">
+                        <Link />  <b> Link: </b>
+                       </div></td>
+                      <td>{courseData.link}</td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                        <Calendar /> <b> Start Date:</b>
+                        </div></td>
+                      <td>{new Date(courseData.startDate).toISOString().split("T")[0]}</td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                        <Calendar /> <b>  End Date:</b>
+                       </div></td>
+                      <td>{new Date(courseData.endDate).toISOString().split("T")[0]}</td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                       <Users />  <b> Speaker:  </b>
+                     </div></td>
+                      <td>{courseData.speaker}</td>
+                    </tr>
+                    <tr>
+                      <td>  <div className="flex-container">
+                       <User /> <b>Host: </b>
+                       </div></td>
+                      <td>{courseData.host}</td>
+                    </tr>
+                    <tr>
+                      <td><div className="flex-container">
+                       <User /> <b> Attendees:</b>   
+                       </div></td>
+                      <td>{courseData.attendees}</td>
+                    </tr>
+                  </table>
     </div>
         
       )}
@@ -246,7 +271,14 @@ const CourseDetails = () => {
                 </label>
                 <label>
                 Speaker:
-                  <input type="text" name="speaker" value={formData.speaker || ''} onChange={handleInputChange} />
+                <select name="speaker" value={courseData.speaker || '' } onChange={handleInputChange}>
+                  <option value="Purna Bahadur Bista">Purna Bahadur Bista</option>
+                  <option value="Kiran Tamang">Kiran Tamang</option>
+                  <option value="Tankaman Shrestha">Tankaman Shrestha</option>
+                  <option value="Apsara Shrestha">Apsara Shrestha</option>
+                  <option value="Suman Shrestha">Suman Shrestha</option>
+                  <option value="Saurav Raj Giri">Saurav Raj Giri</option>
+                  </select>
                 </label>
                 <label>
                 Host:
@@ -255,14 +287,14 @@ const CourseDetails = () => {
           <div className="animated-buttons">
           <button type="button" className="btn btn-primary animated-button" onClick={handleEditSubmit}>Save Changes</button>
           <button type="button" className="btn btn-secondary animated-button" onClick={handleModalClose}>Cancel</button>
-          </div>
-      </form>
-    </div>
-    </div>
-          </Modal>
+                 </div>
+             </form>
+           </div>
+           </div>
+           </Modal>
           <button
             onClick={backButton}
-            className="border border-solid border-black mt-1 px-4 py-2"  style={{ padding: '4px' }}
+            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
           >
           Get back
           </button>

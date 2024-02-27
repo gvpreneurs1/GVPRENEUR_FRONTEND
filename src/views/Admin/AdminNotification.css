@@ -14,6 +14,12 @@
 
 .admin-notification-form button {
     max-width: fit-content;
-    background-color: blue;
-    border-color: black;
+    border: 2px solid #333; /* Dark border color */
+
+}
+
+.admin-notification-form input {
+    max-width: fit-content;
+    border: 2px solid #333; /* Dark border color */
+
 }

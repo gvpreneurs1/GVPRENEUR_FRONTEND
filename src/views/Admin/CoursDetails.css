@@ -32,12 +32,21 @@
 .animated-form {
     display: flex;
     flex-direction: column;
-    animation: fadeInUp 0.5s ease-out;
   }
   
+  .animated-form input {
+    border: 2px solid #333; 
+    margin-left: 20px;
+  }
+
+  .animated-form select {
+    border: 2px solid #333; 
+    margin-left: 20px;
+  }
+
   .animated-label {
     margin-bottom: 15px;
-    animation: fadeInRight 0.5s ease-out;
+
   }
   
   .animated-buttons {
@@ -94,4 +103,18 @@
 .details-profile {
  display: flex;
  justify-content: center;
+}
+
+.details-profile table {
+  border-collapse: collapse;
+  width: 40%;
+}
+
+.details-profile table, .details-profile th, .details-profile td {
+  border: 1px solid black;
+}
+
+.details-profile th, .details-profile td {
+  padding: 8px;
+  text-align: left;
 }

@@ -157,7 +157,7 @@
 .social-media {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    flex-direction: column;
 }
 
 .social-link {
@@ -174,18 +174,12 @@
 }
 
 .social-link:nth-child(2) {
-    color: #1da1f2;
-    /* Twitter blue */
-    font-size: 24px;
-}
-
-.social-link:nth-child(3) {
     color: #ff0000;
     /* YouTube red */
     font-size: 24px;
 }
 
-.social-link:nth-child(4) {
+.social-link:nth-child(3) {
     color: #e4405f;
     /* Instagram pink */
     font-size: 24px;

@@ -2,7 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 import './CreateCourseForm.css'
 import AdminNav from './AdminNav';
-import { Mail, MessageCircle, Link, Calendar, User, Users, Monitor } from 'react-feather';
+import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
 
 const CreateCourseForm = () => {
   const [adminId, setAdminId] = useState('');

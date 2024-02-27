@@ -133,11 +133,8 @@ function Home1() {
                 </div>
 
                 <div className="social-media">
-                    <a href="https://www.facebook.com/sthrajes" target="_blank" rel="noopener noreferrer" className="social-link">
+                    <a href="https://www.facebook.com/gvpreneur1" target="_blank" rel="noopener noreferrer" className="social-link">
                         <FontAwesomeIcon icon={faFacebook} />
-                    </a>
-                    <a href="https://twitter.com/tankamansth9745" target="_blank" rel="noopener noreferrer" className="social-link">
-                        <FontAwesomeIcon icon={faTwitter} />
                     </a>
                     <a href="https://www.youtube.com/@tmscreationtankamanshresth5928" target="_blank" rel="noopener noreferrer" className="social-link">
                         <FontAwesomeIcon icon={faYoutube} />

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ClientNav from './ClientNav';
+import { Mail, MessageCircle, Link, Calendar, User, Users, Monitor } from 'react-feather';
+import Footer from '../../components/Footer/Footer';
 
 const GetClientCourse = () => {
   const [courseData, setCourseData] = useState([]);
@@ -86,8 +88,17 @@ const GetClientCourse = () => {
                     <img src={getSpeakerPhoto(course.speaker)} alt={`Photo of ${course.speaker}`} className="speaker-photo" />
                   )}
                   <h5 className="card-title">{course.title}</h5>
-                  <p className="card-text"><strong>StartDate:</strong> {course.startDate}</p>
-                  <p className="card-text"><strong>Speaker:</strong> {course.speaker}</p>
+                  <p className="card-text"><strong>
+                  <div className="flex-container">
+                          <Calendar /> Start Date:
+                        </div>
+                        </strong> {" "}
+                          {new Date(course.startDate).toISOString().split("T")[0]}</p>
+                          <p className="card-text">
+                    <strong> <div className="flex-container">
+                    <Users /> Speaker:
+                    </div>
+                    </strong> {course.speaker}</p>
                   <button className="btn btn-primary" onClick={() => handleDetailsClick(course.id)}>View More Details</button>
                 </div>
               </div>
@@ -96,6 +107,7 @@ const GetClientCourse = () => {
         </div>
       )}
     </div>
+    <Footer />
     </section>
   );
 };

@@ -3,9 +3,12 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import ClientNav from './ClientNav';
 import { ToastContainer, toast } from 'react-toastify';
+import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../../components/Footer/Footer';
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
+
 
 const ClientCourseDetails = () => {
   const [courseData, setCourseData] = useState({ attendees: [] });
@@ -124,27 +127,53 @@ const ClientCourseDetails = () => {
             )}
 
            <ul className="list-group">
-            <li className="list-group-item">
-              <strong>Title:</strong> {courseData.title}
-            </li>
-            <li className="list-group-item">
-              <strong>Description:</strong> {courseData.description}
-            </li>
-            <li className="list-group-item">
-              <strong>Link:</strong> {courseData.link}
-            </li>
-            <li className="list-group-item">
-              <strong>Start Date:</strong> {courseData.startDate}
-            </li>
-            <li className="list-group-item">
-              <strong>End Date:</strong> {courseData.endDate}
-            </li>
-            <li className="list-group-item">
-              <strong>Speaker:</strong> {courseData.speaker}
-            </li>
-            <li className="list-group-item">
-              <strong>Host:</strong> {courseData.host}
-            </li>
+           <table>
+                    <tr>
+                      <td>   
+                        <div className="flex-container">
+                          <Mail /> <b>Title:</b>
+                        </div></td>
+                      <td>{courseData.title}</td>
+                    </tr>
+                    <tr>
+                      <td><div className="flex-container">  
+                        <MessageCircle />
+                        <b> Description:</b>
+                        </div></td>
+                           
+                      <td>{courseData.description}</td>
+                    </tr>
+                    <tr>
+                      <td><div className="flex-container">
+                        <Link />  <b> Link: </b>
+                       </div></td>
+                      <td><a>{courseData.link}</a></td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                        <Calendar /> <b> Start Date:</b>
+                        </div></td>
+                      <td>{new Date(courseData.startDate).toISOString().split("T")[0]}</td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                        <Calendar /> <b>  End Date:</b>
+                       </div></td>
+                      <td>{new Date(courseData.endDate).toISOString().split("T")[0]}</td>
+                    </tr>
+                    <tr>
+                      <td> <div className="flex-container">
+                       <Users />  <b> Speaker:  </b>
+                     </div></td>
+                      <td>{courseData.speaker}</td>
+                    </tr>
+                    <tr>
+                      <td>  <div className="flex-container">
+                       <User /> <b>Host: </b>
+                       </div></td>
+                      <td>{courseData.host}</td>
+                    </tr>
+                  </table>
             <li>
             <button className="button mt-2" onClick={handleEnroll}>
           Enroll
@@ -175,9 +204,11 @@ const ClientCourseDetails = () => {
             <li key={index}>{attendee}</li>
           ))}
         </ul>
-        <button onClick={handleCloseModal}>Close</button>
+        <button onClick={handleCloseModal} 
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+           Close</button>
       </Modal>
-
+    <Footer />
     </section>
   );
 };
