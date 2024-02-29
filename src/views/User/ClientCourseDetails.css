@@ -1,0 +1,14 @@
+.client-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .client-table th, .client-table td {
+    border: 1px solid black;
+    padding: 8px; /* Optional: add padding for better spacing */
+  }
+  
+  .client-table th {
+    background-color: #f2f2f2; /* Optional: add background color for header */
+  }
+  

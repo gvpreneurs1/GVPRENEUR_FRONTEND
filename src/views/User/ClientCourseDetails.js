@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../../components/Footer/Footer';
+import './ClientCourseDetails.css'
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
@@ -199,11 +200,27 @@ const ClientCourseDetails = () => {
         contentLabel="Attendees Modal"
       >
         <h2>Attendees List</h2>
-        <ul>
-          {courseData.attendees.map((attendee, index) => (
-            <li key={index}>{attendee}</li>
-          ))}
-        </ul>
+        <div className='client-table'>
+        <table>
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+          </thead>
+          <tbody>
+            {courseData.attendees.map((attendee, index) => (
+              <tr key={index}>
+                <td>{attendee.username}</td>
+                <td>{attendee.email}</td>
+                <td>{attendee.mobile}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
+
         <button onClick={handleCloseModal} 
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
            Close</button>

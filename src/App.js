@@ -21,6 +21,7 @@ import AdminNav from './views/Admin/AdminNav';
 import AdminNotification from './views/Admin/AdminNotification';
 import GetNotification from './views/User/GetNotification';
 import BlazeProduct from './views/User/BlazeProduct';
+import ContactForm from './views/User/Contact';
 
 function Home() {
   return (
@@ -62,6 +63,7 @@ function App() {
       <Route path='/get-client-course' element= { <GetClientCourse />} />
       <Route path='/client-course/:id' element= { <ClientCourseDetails />} />
       <Route path='/GetNotification/' element= { <GetNotification />} />
+      <Route path='/ContactForm/' element= { <ContactForm />} />
     </Routes>
 
   );

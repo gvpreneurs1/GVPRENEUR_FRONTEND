@@ -3,13 +3,14 @@ import React from 'react'
 import Newsletter from './Newsletter.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faFacebook, faTwitter, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import './Footer.css'
 
 const Footer = () => {
   return (
     <footer className='footer py-5' style={{ backgroundColor: '#F2F6FF' }}>
       <div className="container">
         <div className="footer-content row">
-          <div className="col-md-3 px-3">
+          <div className="col-md-3 px-3 first-section">
             <div className="block-header text-capitalize">
               <h3>Contact Us</h3>
             </div>
@@ -18,14 +19,14 @@ const Footer = () => {
           </div>
           <div className="col-md-3 px-3">
             <div className="block-header text-capitalize">
-              <h3>Our Links</h3>
+              <h3>Our Sections</h3>
             </div>
             <div className="list-holder">
               <ul className="link-list text-capitalize">
-                <li><a href="#">home</a></li>
-                <li><a href="#">Course</a></li>
-                <li><a href="#">notification</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li>home</li>
+                <li>Course</li>
+                <li>notification</li>
+                <li>Contact us</li>
               </ul>
             </div>
           </div>

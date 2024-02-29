@@ -6,15 +6,15 @@ const BlazeProduct = ({ productData }) => {
   
     const proceedToBuy = () => {
       const payload = {
-          "amount": "100",
+          "amount": "1000",
           "product_delivery_charge": "0",
           "product_service_charge": "0",
           "product_code": "EPAYTEST",
           "signed_field_names": "total_amount,transaction_uuid,product_code",
-          "success_url": "http://localhost:3000/client-login",
+          "success_url": "http://localhost:3005/api/esewa-success",
           "failure_url": "http://google.com",
           "tax_amount": "0",
-          "total_amount": "100",
+          "total_amount": "1000",
         }
   
         openEsewaPortal(payload)
