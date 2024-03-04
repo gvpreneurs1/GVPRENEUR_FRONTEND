@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ClientNav from './ClientNav';
 import { ToastContainer, toast } from 'react-toastify';
 import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
+import useEsewa from "./useEsewa"
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../../components/Footer/Footer';
 import './ClientCourseDetails.css'
@@ -13,7 +14,6 @@ Modal.setAppElement('#root');
 
 const ClientCourseDetails = () => {
   const [courseData, setCourseData] = useState({ attendees: [] });
-  const [formData, setformData] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -25,8 +25,31 @@ const ClientCourseDetails = () => {
   const Suman = `${process.env.PUBLIC_URL}/images/Suman.png`;
   const Saurav = `${process.env.PUBLIC_URL}/images/Saurav.jpg`;
   const placeholder = `${process.env.PUBLIC_URL}/images/placeholder.png`;
+  const userId = localStorage.getItem('userId');
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+
+    const [openEsewaPortal] = useEsewa()
+  
+    const proceedToBuy = () => {
+      localStorage.setItem('userId',userId);
+      localStorage.setItem('courseId',id);
+      const payload = {
+          "amount": "1000",
+          "product_delivery_charge": "0",
+          "product_service_charge": "0",
+          "product_code": "EPAYTEST",
+          "signed_field_names": "total_amount,transaction_uuid,product_code",
+          "success_url": `http://localhost:3005/api/esewa-success/${userId}/${id}`,
+          "failure_url": "http://google.com",
+          "tax_amount": "0",
+          "total_amount": "1000",
+        }
+  
+        openEsewaPortal(payload)
+    }
+  
 
   const handleOpenModal = () => {
     setModalIsOpen(true);
@@ -83,34 +106,6 @@ const ClientCourseDetails = () => {
   const handleBack = () => {
     navigate(`/get-client-course`)
   }
-
-  const handleEnroll = async () => {
-    try {
-      const userId = localStorage.getItem('userId');
-
-      if (!userId) {
-        console.error('User ID not found in localStorage');
-        return;
-      }
-
-      const response = await axios.post(`http://localhost:3005/api/add-user-course/${userId}/${id}`);
-
-      if (response.status === 201) {
-        toast.success('User enrolled successfully', { position: 'top-center' });
-        // Optionally update the UI or show a success message
-        console.log('User enrolled successfully');
-      } else {
-        console.error('Failed to enroll user:', response.statusText);
-      }
-    } catch (error) {
-      if (error.response.status === 409) {
-        // Show toast error when the user is already enrolled
-        toast.error('User is already enrolled in this course',);
-      } else {
-        console.error('Error enrolling user:', error);
-      }
-    }
-  };
 
   return (
     <section> 
@@ -175,13 +170,18 @@ const ClientCourseDetails = () => {
                       <td>{courseData.host}</td>
                     </tr>
                   </table>
-            <li>
-            <button className="button mt-2" onClick={handleEnroll}>
-          Enroll
-        </button>
+            <li>  
+            <button
+            type="button"
+            onClick={proceedToBuy}
+            class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 border border-blue-700 rounded"
+           >
+            Buy with esewa
+          </button>
             </li>
             <li>
-            <button className="button mt-2" onClick={handleOpenModal}>
+            <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            onClick={handleOpenModal}>
               Open Attendees Modal
             </button>
             </li>
@@ -189,7 +189,8 @@ const ClientCourseDetails = () => {
         </div>
         
       )}
-      <button className='button' onClick={handleBack}>Go Back</button>
+      <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+       onClick={handleBack}>Go Back</button>
 
       <ToastContainer />
     

@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* 
 .button {
     display: inline-block;
     padding: 12px 24px;
@@ -19,38 +20,32 @@
   .button:hover {
     background-color: #2980b9;
     color: #ffffff;
-  }
+  } */
   
-  /* Button Animation */
-  .button:hover {
+  /* .button:hover {
     transform: scale(1.1);
   }
   
-  /* Additional Styles */
   .button:active {
     transform: scale(0.9);
     transition: transform 0.1s;
   }
   
-  /* Optional: Add a subtle shadow for a lift effect */
   .button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Optional: Gradient Background */
   .button {
     background: linear-gradient(to right, #3498db, #2980b9);
   }
   
-  /* Optional: Rounded Corners */
   .button {
     border-radius: 25px;
   }
   
-  /* Optional: Icon inside the button */
   .button i {
     margin-right: 8px;
-  }
+  } */
   
   /* Responsive Design */
   @media (max-width: 600px) {

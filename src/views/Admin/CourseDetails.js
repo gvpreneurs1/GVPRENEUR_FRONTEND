@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import Modal from 'react-modal';
+
 import './CoursDetails.css';
 import AdminNav from './AdminNav';
 import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather';
-
+import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const CourseDetails = () => {
-  const [courseData, setCourseData] = useState({});
+  const [courseData, setCourseData] = useState({ attendees: [] });
   const [formData, setformData] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -223,12 +223,6 @@ const CourseDetails = () => {
                        </div></td>
                       <td>{courseData.host}</td>
                     </tr>
-                    <tr>
-                      <td><div className="flex-container">
-                       <User /> <b> Attendees:</b>   
-                       </div></td>
-                      <td>{courseData.attendees}</td>
-                    </tr>
                   </table>
     </div>
         
@@ -238,6 +232,42 @@ const CourseDetails = () => {
           <button className="btn btn-danger mr-2 custom-delete" onClick={handleDelete}>Delete</button>
           <button className="btn btn-primary custom-edit" onClick={handleEdit}>Edit</button>
           </div>
+
+        {/* */}
+
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={handleCloseModal}
+        contentLabel="Attendees Modal"
+      >
+        <h2>Attendees List</h2>
+        <div className='client-table'>
+        <table>
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+          </thead>
+          <tbody>
+            {courseData.attendees.map((attendee, index) => (
+              <tr key={index}>
+                <td>{attendee.username}</td>
+                <td>{attendee.email}</td>
+                <td>{attendee.mobile}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
+
+        <button onClick={handleCloseModal} 
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+           Close</button>
+      </Modal>
+
+        { /* Editing modal*/}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={handleModalClose}
