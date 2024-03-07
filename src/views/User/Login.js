@@ -60,7 +60,6 @@ const Login = () => {
                 <img src={logo} alt="logo" />
         </nav>
         <div className="container">
-          
           <div className="row justify-content-center">
             <div className="col-md-6 login-form">
             <h1>Login App</h1> 
@@ -73,8 +72,14 @@ const Login = () => {
                   <label htmlFor="password" className="form-label">Password</label>
                   <input type="password" className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="button" className="button mr-36" onClick={handleLogin}>Login</button>
-                <button type="button" className="button" onClick={handleRegister}>Register</button>
+                <div className='form-button'>
+                <button type="button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+                 onClick={handleLogin}>Login
+                 </button>
+                <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                onClick={handleRegister}>Register
+                </button>
+                </div>
               </form>
             </div>
           </div>

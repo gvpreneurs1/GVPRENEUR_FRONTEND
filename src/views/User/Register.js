@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useParams, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import Footer from '../../components/Footer/Footer';
 Modal.setAppElement('#root');
 
 
@@ -140,7 +141,6 @@ const Register = () => {
   return (
 <section id="Register" className="registration-section">
       <div className="container">
-        <h1>Registration Form</h1>
         <Box
       component="form"
       onSubmit={handleSubmitForm}
@@ -153,6 +153,8 @@ const Register = () => {
       autoComplete="off"
       className='Registration-Form'
     >
+        <h1>Registration Form</h1>
+
       <TextField
         id="username"
         label="Username"
@@ -204,11 +206,11 @@ const Register = () => {
         value={formData.mobile}
         onChange={handleChange}
       />
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="contained" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" >
         Register
       </Button>
-      <Button type="button" variant="contained" color="secondary" onClick={handleLogin}>
-      Login
+      <Button type="button" variant="contained" color="secondary" onClick={handleLogin} class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+        Back to Login
       </Button>
       </Box>
 
@@ -229,6 +231,7 @@ const Register = () => {
           </button>
         </Modal>
         </div>
+        <Footer/>
     </section>
   );
 }

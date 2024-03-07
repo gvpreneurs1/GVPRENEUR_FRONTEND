@@ -234,7 +234,10 @@ const CourseDetails = () => {
           </div>
 
         {/* */}
-
+        <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            onClick={handleOpenModal}>
+              Open Attendees Modal
+            </button>
         <Modal
         isOpen={modalIsOpen}
         onRequestClose={handleCloseModal}

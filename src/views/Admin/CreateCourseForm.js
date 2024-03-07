@@ -6,15 +6,7 @@ import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather'
 
 const CreateCourseForm = () => {
   const [adminId, setAdminId] = useState('');
-  const [courseData, setCourseData] = useState({
-    title: '',
-    description: '',
-    link: '',
-    startDate: '',
-    endDate: '',
-    speaker: '',
-    host: '',
-  });
+  const [courseData, setCourseData] = useState({});
 
   useEffect(() => {
     /// Retrieve adminId from local storage when the component mounts
@@ -107,6 +99,7 @@ const CreateCourseForm = () => {
         <Users /> Speaker:
       </div>
         <select name="speaker" value={courseData.speaker} onChange={handleChange}>
+        <option value="None">None</option>
         <option value="Purna Bahadur Bista">Purna Bahadur Bista</option>
         <option value="Kiran Tamang">Kiran Tamang</option>
         <option value="Tankaman Shrestha">Tankaman Shrestha</option>

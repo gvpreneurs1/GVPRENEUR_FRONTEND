@@ -6,6 +6,7 @@
   .client-table th, .client-table td {
     border: 1px solid black;
     padding: 8px; /* Optional: add padding for better spacing */
+    max-width: max-content;
   }
   
   .client-table th {

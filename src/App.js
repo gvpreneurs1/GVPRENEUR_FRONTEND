@@ -28,7 +28,6 @@ function Home() {
   return (
     <main>
       {/* <Header /> */}
-      <Navbar />
       <First />
     </main>
   )
@@ -66,6 +65,7 @@ function App() {
       <Route path='/GetNotification/' element= { <GetNotification />} />
       <Route path='/ContactForm/' element= { <ContactForm />} />
       <Route path='/CoursePost/' element= { <CoursePost />} />
+      <Route path='/Home/' element= { <Home />} />
     </Routes>
 
   );

@@ -171,19 +171,27 @@ const ClientCourseDetails = () => {
                     </tr>
                   </table>
             <li>  
-            <button
+            {loading && <p>Loading...</p>}
+ 
+          <button
             type="button"
             onClick={proceedToBuy}
-            class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 border border-blue-700 rounded"
-           >
+            className="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 border border-blue-700 rounded"
+          >
             Buy with esewa
           </button>
+       
+ 
             </li>
             <li>
+            {courseData &&
+        userId &&
+        courseData.attendees.some(attendee => attendee.id === userId) && (
             <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
             onClick={handleOpenModal}>
               Open Attendees Modal
             </button>
+             )}
             </li>
           </ul>
         </div>
@@ -201,6 +209,7 @@ const ClientCourseDetails = () => {
         contentLabel="Attendees Modal"
       >
         <h2>Attendees List</h2>
+        <h2>Link: {courseData.link}</h2>
         <div className='client-table'>
         <table>
           <thead>
