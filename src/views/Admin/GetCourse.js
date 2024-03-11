@@ -51,7 +51,7 @@ const GetCourse = () => {
   const getSpeakerPhoto = (speaker) => {
     switch (speaker) {
       case 'Purna Bahadur Bista':
-        return Purna;
+        return Kiran;
       case 'Kiran Tamang':
         return Kiran;
       case 'Tankaman Shrestha':

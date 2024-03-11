@@ -1,5 +1,28 @@
 .first-section a{
-    color: #0a16fa;
     text-decoration: none;  
     font-weight: 500;
+}
+.social-link {
+    margin-right: 10px;
+    /* Optional: Add some space between icons */
+
+}
+
+/* Customize the styles for each social media icon */
+.social-media-facebook{
+    color: #1877f2;
+    /* Facebook blue */
+    font-size: 20px;
+}
+
+.social-media-youtube {
+    color: #ff0000;
+    /* YouTube red */
+    font-size: 20px;
+}
+
+.social-media-instagram {
+    color: #e4405f;
+    /* Instagram pink */
+    font-size: 20px;
 }

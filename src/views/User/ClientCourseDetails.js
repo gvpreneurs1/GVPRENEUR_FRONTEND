@@ -140,12 +140,6 @@ const ClientCourseDetails = () => {
                       <td>{courseData.description}</td>
                     </tr>
                     <tr>
-                      <td><div className="flex-container">
-                        <Link />  <b> Link: </b>
-                       </div></td>
-                      <td><a>{courseData.link}</a></td>
-                    </tr>
-                    <tr>
                       <td> <div className="flex-container">
                         <Calendar /> <b> Start Date:</b>
                         </div></td>
@@ -211,8 +205,8 @@ const ClientCourseDetails = () => {
         <h2>Attendees List</h2>
         <h2>Link: {courseData.link}</h2>
         <div className='client-table'>
-        <table>
-          <thead>
+        <table class="table table-hover">
+          <thead class="table-dark">
           <tr>
             <th>Username</th>
             <th>Email</th>

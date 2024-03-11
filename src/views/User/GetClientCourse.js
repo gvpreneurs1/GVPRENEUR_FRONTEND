@@ -22,7 +22,7 @@ const GetClientCourse = () => {
     switch( speaker) {
         case 'Purna Bahadur Bista':
           return Purna;
-        case 'Kiran tamang':
+        case 'Kiran Tamang':
           return Kiran;
         case 'Tankaman Shrestha':
           return Tankaman1;

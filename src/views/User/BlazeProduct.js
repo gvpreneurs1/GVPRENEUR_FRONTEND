@@ -12,7 +12,7 @@ const BlazeProduct = ({ productData }) => {
           "product_code": "EPAYTEST",
           "signed_field_names": "total_amount,transaction_uuid,product_code",
           "success_url": "http://localhost:3005/api/esewa-success",
-          "failure_url": "http://google.com",
+          "failure_url": "http://localhost:3000/get-client-course",
           "tax_amount": "0",
           "total_amount": "1000",
         }

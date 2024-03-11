@@ -23,10 +23,13 @@ import GetNotification from './views/User/GetNotification';
 import BlazeProduct from './views/User/BlazeProduct';
 import ContactForm from './views/User/Contact';
 import CoursePost from './views/User/CoursePost';
+import GetMessages from './views/Admin/GetMessages';
+import ClientNav from './views/User/ClientNav';
 
-function Home() {
+function  Home() {
   return (
     <main>
+      <ClientNav/>
       {/* <Header /> */}
       <First />
     </main>
@@ -56,6 +59,7 @@ function App() {
       <Route path="/get-course" element = {<GetCourse/>}/>
       <Route path="/course/:id" element = {<CourseDetails/>}/>
       <Route path="/admin-notification" element = {< AdminNotification/>}/>
+      <Route path="/get-messages" element = {< GetMessages/>}/>
       
       {/* Client routes */}
       <Route path="/client-login" element={<Login />} />

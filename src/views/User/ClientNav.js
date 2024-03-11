@@ -4,15 +4,16 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
 const navigation = [
   { name: 'Course', href: '/get-client-course/', current: true },
-  { name: 'Home', href: '#', current: false },
+  { name: 'Home', href: '/Home/', current: false },
   { name: 'About-us', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
   { name: 'Contact', href: '/ContactForm', current: false },
   
 ]
+
+const logo = `${process.env.PUBLIC_URL}/images/logo.png`;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -67,12 +68,15 @@ export default function ClientNav() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={logo}
                     alt="Your Company"
+                    style={{
+                    height: '65px'
+                }}
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4" style= {{position: 'absolute', top: '15px' }} >
                     {navigation.map((item) => (
                       <a
                         key={item.name}
