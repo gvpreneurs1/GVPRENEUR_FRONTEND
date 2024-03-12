@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import First from './First';
+import Hero from './views/User/Hero';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -25,13 +25,15 @@ import ContactForm from './views/User/Contact';
 import CoursePost from './views/User/CoursePost';
 import GetMessages from './views/Admin/GetMessages';
 import ClientNav from './views/User/ClientNav';
+import ServicesSection from './views/User/Service';
 
 function  Home() {
   return (
     <main>
       <ClientNav/>
       {/* <Header /> */}
-      <First />
+      <Hero />
+      <ServicesSection />
     </main>
   )
 }
@@ -69,7 +71,7 @@ function App() {
       <Route path='/GetNotification/' element= { <GetNotification />} />
       <Route path='/ContactForm/' element= { <ContactForm />} />
       <Route path='/CoursePost/' element= { <CoursePost />} />
-      <Route path='/Home/' element= { <Home />} />
+      <Route path='/Home/' element= {<Home />} />
     </Routes>
 
   );

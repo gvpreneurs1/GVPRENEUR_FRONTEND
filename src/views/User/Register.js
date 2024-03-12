@@ -12,6 +12,8 @@ import Footer from '../../components/Footer/Footer';
 Modal.setAppElement('#root');
 
 
+const logo = `${process.env.PUBLIC_URL}/images/logo.png`;
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -139,20 +141,23 @@ const Register = () => {
   }
 
   return (
-<section id="Register" className="registration-section">
+      <section id="Register" className="registration-section">
+      <nav className="logo-placeholder flex justify-center">
+       <img src={logo} alt="logo" />
+      </nav>
       <div className="container">
         <Box
       component="form"
       onSubmit={handleSubmitForm}
       sx={{
         '& > :not(style)': { mb: 3 },
-        maxWidth: '400px', // Adjust the width as needed
-        margin: 'auto', // Center the form
+        maxWidth: '400px', 
+        margin: 'auto', 
       }}
       noValidate
       autoComplete="off"
       className='Registration-Form'
-    >
+      >
         <h1>Registration Form</h1>
 
       <TextField

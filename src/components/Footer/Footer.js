@@ -3,6 +3,7 @@ import React from 'react'
 import Newsletter from './Newsletter.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faFacebook, faTwitter, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { MapPin, Mail } from 'react-feather';
 import './Footer.css'
 
 
@@ -25,8 +26,13 @@ const Footer = () => {
             <div className="block-header text-capitalize">
               <h3>Contact Us</h3>
             </div>
-            <address><a target='/' href='https://www.google.com/maps/place/Global+Victors/@27.6960121,85.2778433,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1901c1264855:0xb93db1ec2e63d3ee!8m2!3d27.6960121!4d85.2804182!16s%2Fg%2F11l70prs54?entry=ttu'> Kalanki, Kathmandu </a> </address>
+            <div className='flex gap-1'>
+            <MapPin /> <address><a target='/' href='https://www.google.com/maps/place/Global+Victors/@27.6960121,85.2778433,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1901c1264855:0xb93db1ec2e63d3ee!8m2!3d27.6960121!4d85.2804182!16s%2Fg%2F11l70prs54?entry=ttu'> Kalanki, Kathmandu </a> </address>
+            </div>
+            <div className='flex gap-1'>
+              <Mail />
             <a href="mailto:quotes@gsbondcleaning.com.au">gvpreneurs1@gmail.com</a>
+            </div>
           </div>
          
           <div className="col-md-3 px-3">

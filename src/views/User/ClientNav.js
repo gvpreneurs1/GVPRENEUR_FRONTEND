@@ -40,14 +40,14 @@ export default function ClientNav() {
         }
       }
       catch (error) {
-        console.error('error connecting to the API', error)
+        console.error('error connecting to the API', error) 
       }
     };
     fetchNotificationCount();
-  }, []);
+  }, []); 
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 z-999">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

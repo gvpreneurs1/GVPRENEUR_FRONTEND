@@ -11,26 +11,7 @@ const Login = () => {
     const [accessToken, setAccessToken] = useState('');
 
     const logo = `${process.env.PUBLIC_URL}/images/logo.png`;
-
-    useEffect(() => {
-      // Start of Tawk.to Script
-      const tawkScript = document.createElement('script');
-      tawkScript.type = 'text/javascript';
-      tawkScript.async = true;
-      tawkScript.src = 'https://embed.tawk.to/65ddc1ca9131ed19d9722222/1hnl3q028';
-      tawkScript.charset = 'UTF-8';
-      tawkScript.setAttribute('crossorigin', '*');
-  
-      // Append the script to the document body
-      document.body.appendChild(tawkScript);
-  
-      // Cleanup function to remove the script when the component is unmounted
-      return () => {
-        document.body.removeChild(tawkScript);
-      };
-      // End of Tawk.to Script
-    }, []); 
-
+    
     const handleLogin = async () => {
         try {
           const response = await axios.post('http://localhost:3005/api/login', {
