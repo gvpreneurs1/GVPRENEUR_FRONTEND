@@ -7,7 +7,7 @@ import { Mail, MessageCircle, Link, Calendar, User, Users } from 'react-feather'
 import useEsewa from "./useEsewa"
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../../components/Footer/Footer';
-import './ClientCourseDetails.css'
+import './ClientCourseDetails.css';
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 

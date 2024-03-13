@@ -1,4 +1,5 @@
 import React from 'react';
+import { School as SchoolIcon, AssuredWorkload as AssuredWorkloadIcon, Paid as PaidIcon, AllInclusive as AllInclusiveIcon, RemoveModerator as RemoveModeratorIcon, CoPresent as CoPresentIcon} from '@mui/icons-material';
 
 const ServicesSection = () => {
   return (
@@ -21,7 +22,7 @@ const ServicesSection = () => {
             <line x1="55.1" y1="30.4" x2="100" y2="30.4" className="stroke-primary" style={{ strokeWidth: 2, strokeMiterlimit: 10 }}></line>
             <line x1="45.1" y1="30.4" x2="0" y2="30.4" className="stroke-primary" style={{ strokeWidth: 2, strokeMiterlimit: 10 }}></line>
           </svg>
-          <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Save time managing advertising &amp; Content for your business.</p>
+          <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Training youth with business mindset in the digital landscape &amp; Expand the G.V. community</p>
         </header>
         {/* End heading */}
         {/* row */}
@@ -35,12 +36,10 @@ const ServicesSection = () => {
             <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
               <div className="inline-block text-gray-900 mb-4">
                 {/* icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                </svg>
+              <SchoolIcon sx={{ fontSize: 40, }} color="primary"/>
               </div>
-              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">SEO Services</h3>
-              <p className="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel ultricies nisl. Proin id ligula ut sem tincidunt rhoncus.</p>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Business Elevation</h3>
+              <p className="text-gray-500">Our company provides business elevation through targeted digital training programs ensuring they stay competitive in today's digital landscape.</p>
             </div>
           </div>
           {/* Service block 2 */}
@@ -53,13 +52,10 @@ const ServicesSection = () => {
             <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
               <div className="inline-block text-gray-900 mb-4">
                 {/* icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" className="bi bi-chat-square-dots" viewBox="0 0 16 16">
-                  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
-                  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
+                < AssuredWorkloadIcon sx={{ fontSize: 40, }} color="primary"/>
               </div>
-              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Social Content</h3>
-              <p className="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel ultricies nisl. Proin id ligula ut sem tincidunt rhoncus.</p>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Government Authorized</h3>
+              <p className="text-gray-500">To  symbolizes trust and compliance excellence, we help youths effortlessly attain and uphold this status through tailored guidance and training.</p>
             </div>
           </div>
           {/* Service block 3 */}
@@ -72,15 +68,61 @@ const ServicesSection = () => {
             <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
               <div className="inline-block text-gray-900 mb-4">
                 {/* icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" className="bi bi-badge-ad" viewBox="0 0 16 16">
-                  <path d="M3.7 11l.47-1.542h2.004L6.644 11h1.261L5.901 5.001H4.513L2.5 11h1.2zm1.503-4.852l.734 2.426H4.416l.734-2.426h.053zm4.759.128c-1.059 0-1.753.765-1.753 2.043v.695c0 1.279.685 2.043 1.74 2.043.677 0 1.222-.33 1.367-.804h.057V11h1.138V4.685h-1.16v2.36h-.053c-.18-.475-.68-.77-1.336-.77zm.387.923c.58 0 1.002.44 1.002 1.138v.602c0 .76-.396 1.2-.984 1.2-.598 0-.972-.449-.972-1.248v-.453c0-.795.37-1.24.954-1.24z"></path>
-                  <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"></path>
-                </svg>
+              < PaidIcon sx={{ fontSize: 40, }} color="primary" />
               </div>
-              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Creative Ads</h3>
-              <p className="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel ultricies nisl. Proin id ligula ut sem tincidunt rhoncus.</p>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Handsome bonus</h3>
+              <p className="text-gray-500">Our company offers attractive bonuses for retailing our products, incentivizing sales representatives to excel.</p>
             </div>
           </div>
+
+          <div
+            className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".3s"
+            style={{ visibility: 'visible', animationDuration: '1s', animationDelay: '0.3s', animationName: 'fadeInUp' }}
+          >
+            <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+              <div className="inline-block text-gray-900 mb-4">
+                {/* icon */}
+              < AllInclusiveIcon sx={{ fontSize: 40, }} color="secondary" />
+              </div>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Permanent Member</h3>
+              <p className="text-gray-500">Once you join, you're assured that your position within our organization is secure, and you won't face displacement or layoffs.</p>
+            </div>
+          </div>
+
+          <div
+            className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".3s"
+            style={{ visibility: 'visible', animationDuration: '1s', animationDelay: '0.3s', animationName: 'fadeInUp' }}
+          >
+            <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+              <div className="inline-block text-gray-900 mb-4">
+                {/* icon */}
+              < RemoveModeratorIcon sx={{ fontSize: 40, }} color="secondary" />
+              </div>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">No Demotion</h3>
+              <p className="text-gray-500">We fosters a sense of security and confidence among our team members, enabling them to focus on growth and innovation without the fear of setbacks.</p>
+            </div>
+          </div>
+
+          <div
+            className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay=".3s"
+            style={{ visibility: 'visible', animationDuration: '1s', animationDelay: '0.3s', animationName: 'fadeInUp' }}
+          >
+            <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+              <div className="inline-block text-gray-900 mb-4">
+                {/* icon */}
+              < CoPresentIcon  sx={{ fontSize: 40, }} color="secondary" />
+              </div>
+              <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Inheritable Business</h3>
+              <p className="text-gray-500">Inheritable Business encapsulates the essence of continuity and legacy within our company as they can be easily transferred</p>
+            </div>
+          </div>
+          
           {/* ... Add more service blocks as needed */}
         </div>
         {/* end row */}

@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import Hero from './views/User/Hero';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home1 from './Visiting/Visit-Tankaman/Home1';
 import Video1 from './Visiting/Visit-Tankaman/Video1';
@@ -11,13 +9,11 @@ import About1 from './Visiting/Visit-Tankaman/About1';
 import Login from './views/User/Login';
 import Register from './views/User/Register';
 import AdminLoginComponent from './views/Admin/AdminLogin';
-import Landing from './views/User/Landing';
 import CreateCourseForm from './views/Admin/CreateCourseForm';
 import GetCourse from './views/Admin/GetCourse';
 import CourseDetails from './views/Admin/CourseDetails';
 import GetClientCourse from './views/User/GetClientCourse';
 import ClientCourseDetails from './views/User/ClientCourseDetails'
-import AdminNav from './views/Admin/AdminNav';
 import AdminNotification from './views/Admin/AdminNotification';
 import GetNotification from './views/User/GetNotification';
 import BlazeProduct from './views/User/BlazeProduct';
@@ -25,7 +21,9 @@ import ContactForm from './views/User/Contact';
 import CoursePost from './views/User/CoursePost';
 import GetMessages from './views/Admin/GetMessages';
 import ClientNav from './views/User/ClientNav';
-import ServicesSection from './views/User/Service';
+import Service from './views/User/Service';
+import Footer from './components/Footer/Footer';
+import Testimonial from './views/User/Testimonial';
 
 function  Home() {
   return (
@@ -33,7 +31,9 @@ function  Home() {
       <ClientNav/>
       {/* <Header /> */}
       <Hero />
-      <ServicesSection />
+      <Service /> 
+      <Testimonial />
+      <Footer />
     </main>
   )
 }
