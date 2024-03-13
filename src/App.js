@@ -24,6 +24,7 @@ import ClientNav from './views/User/ClientNav';
 import Service from './views/User/Service';
 import Footer from './components/Footer/Footer';
 import Testimonial from './views/User/Testimonial';
+import StaticFaqSection from './views/User/FAQ';
 
 function  Home() {
   return (
@@ -32,6 +33,7 @@ function  Home() {
       {/* <Header /> */}
       <Hero />
       <Service /> 
+      <StaticFaqSection />
       <Testimonial />
       <Footer />
     </main>
@@ -55,7 +57,6 @@ function App() {
     <Routes>
       
       {/* Admin routes */}
-      <Route path="/" element={<BlazeProduct />} />
       <Route path="/admin-login" element={<AdminLoginComponent />} />
       <Route path= "/create-course" element= {<CreateCourseForm />}/>
       <Route path="/get-course" element = {<GetCourse/>}/>
@@ -64,7 +65,7 @@ function App() {
       <Route path="/get-messages" element = {< GetMessages/>}/>
       
       {/* Client routes */}
-      <Route path="/client-login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path='/get-client-course' element= { <GetClientCourse />} />
       <Route path='/client-course/:id' element= { <ClientCourseDetails />} />
